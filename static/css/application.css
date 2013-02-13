@@ -6,7 +6,7 @@
  * @URL:
  */
 
-
+.clear{ clear:both; font-size:1px; height:1px; line-height:1px; overflow:hidden; width:1px; }
 
 
 /**
@@ -67,7 +67,7 @@ a:active
 	margin: 25px auto;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	/* border: 1px solid rgba(0, 0, 0, 0.2); */
 	float: left;
 }
 
@@ -304,6 +304,7 @@ nav#primary ul
 .one_half,
 .one_third,
 .two_third,
+.three_quarter,
 .one_quarter
 {
 	margin-right: 0px; 
@@ -386,6 +387,7 @@ nav#primary ul
 	.one_half,
 	.one_third,
 	.two_third,
+	.three_quarter,
 	.one_quarter
 	{
 		margin-right: 0px; 
@@ -469,9 +471,10 @@ nav#primary ul
 	.one_half,
 	.one_third,
 	.two_third,
+	.three_quarter,
 	.one_quarter
 	{
-		margin-right: 0px; 	
+		margin-right: 0px;
 		width: 540px;
 	}
 }
@@ -568,6 +571,11 @@ nav#primary ul
 	.two_third
 	{
 		width: 390px;
+		margin-right: 50px; 
+	}
+
+	.three_quarter{
+		width: 430px;
 		margin-right: 50px; 
 	}
 
@@ -673,6 +681,11 @@ nav#primary ul
 		margin-right: 50px; 
 	}
 
+	.three_quarter{
+		width: 640px;
+		margin-right: 50px; 
+	}
+
 	.one_quarter
 	{
 		width: 180px;
@@ -775,6 +788,12 @@ nav#primary ul
 		margin-right: 50px; 
 	}
 
+	.three_quarter
+	{
+		width: 730px;
+		margin-right: 50px; 
+	}
+
 	.one_quarter
 	{
 		width: 210px;
@@ -874,6 +893,12 @@ nav#primary ul
 	.two_third
 	{
 		width: 730px;
+		margin-right: 50px; 
+	}
+
+	.three_quarter
+	{
+		width: 820px;
 		margin-right: 50px; 
 	}
 

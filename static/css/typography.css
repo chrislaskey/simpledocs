@@ -2,8 +2,16 @@
  * Typography
  */
 
+@font-face {
+  font-family: 'Neue';
+  src: url("../fonts/HelveticaNeueLTPro-Lt.eot");
+  src: local('â˜º'), url("../fonts/HelveticaNeueLTPro-Lt.woff") format('woff'), url("../fonts/HelveticaNeueLTPro-Lt.ttf") format('truetype'), url("../fonts/HelveticaNeueLTPro-Lt.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * { 
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
 	line-height: 1.231; 
 	text-rendering: optimizeLegibility; 
@@ -120,15 +128,29 @@ code
 	border-radius: 3px;
 	font-size: 14px;
 }
-pre 
+pre
 {
 	display: block;
 	overflow: hidden;
 	background: #fefefe;
 	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	border-radius: 2px;
 	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+	white-space: pre; 
+	white-space: pre-wrap; 
+	word-wrap: break-word;
+	font-family: monospace; 
+}
+pre code
+{
+	display: block;
+	overflow: hidden;
+	background: #fefefe;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-radius: 0px;
+	box-shadow: none;
 	white-space: pre; 
 	white-space: pre-wrap; 
 	word-wrap: break-word;
@@ -173,11 +195,11 @@ sub
 /** 
  * Give paragraphs some default styling. 
  */
-p 
+p
 { 
 	font-size: 18px;
-	line-height: 1.125em;
-	margin: 0 0 1.125em 0;
+	line-height: 1.35em;
+	margin: 0 0 1.2em 0;
 }
 p small 
 { 
@@ -277,6 +299,7 @@ li
 { 
 	font-size: 18px;
 	line-height: 1.4em;
+	padding:6px 0px 3px 0px;
 }
 dl 
 { 
