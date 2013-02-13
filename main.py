@@ -12,7 +12,7 @@ def add_python_site_packages_to_sys_path ():
 
 add_python_site_packages_to_sys_path()
 
-from flask import Flask
+from flask import Flask, abort, request, redirect, url_for, render_template, g
 from markdown import markdown
 import codecs
 app = Flask(__name__)
@@ -35,17 +35,27 @@ class MarkdownParser:
         parsed_html = markdown(unicode_text, **self.options)
         return parsed_html
 
-def import_file_contents_as_unicode(file_path):
-    input_file = codecs.open(file_path, mode="r", encoding="utf-8")
-    unicode_text = input_file.read()
-    return unicode_text
+class FileReader:
+
+    def read(self, file_path):
+        input_file = codecs.open(file_path, mode="r", encoding="utf-8")
+        unicode_text = input_file.read()
+        return unicode_text
 
 @app.route('/')
 def hello_world():
     test_file_path = "readme.md"
-    unicode_text = import_file_contents_as_unicode(test_file_path)
+    unicode_text = FileReader().read(test_file_path)
     markdown_parser = MarkdownParser()
-    return markdown_parser.parse(unicode_text)
+    html_content = markdown_parser.parse(unicode_text)
+    nav_items = ["one", "two", "three"]
+    templatevars = {
+        "content": html_content,
+        "nav_items": nav_items
+    }
+    return render_template('page.html', **templatevars)
 
 if __name__ == '__main__':
+    app.jinja_env.line_statement_prefix = '%'
+    # app.debug = True
     app.run()

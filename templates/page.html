@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Title -->
+	<title>{{ page_title }}</title>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="/favicon.png" />
+	
+	<!-- Meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="/static/css/skeleton.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/plugins.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/workless.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/typography.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/font.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/forms.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/tables.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/buttons.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/alerts.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/tabs.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/pagination.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/breadcrumbs.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/helpers.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/scaffolding.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/print.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/application.css" media="all"/>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="/static/js/library.js"></script>
+	<script type="text/javascript" src="/static/js/common.js"></script>
+
+</head>
+
+<body class="blueish {{ body_class }}">
+<div class="boxed">
+	<div id="main">
+
+		<header>
+			<div class="logo"><a href="/">Notes</a></div>
+			% import 'nav.html' as nav
+			{{ nav.main(nav_items) }}
+			% include "search.html"
+		</header>
+
+		<section class="sidenav one_quarter">
+			{{ nav.side(nav_items) }}
+		</section>
+
+		<section class="content three_quarter last">
+			<div class="content">{{ content|safe }}</div>
+		</section>
+
+		<footer>
+
+		</footer>
+
+	</div>
+	<div class="clear"></div>
+</div>
+</body>
+</html>
