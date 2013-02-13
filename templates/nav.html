@@ -1,0 +1,39 @@
+% macro _get_nav_level(items)
+	Code here to create navigation levels
+% endmacro
+
+% macro main(items)
+	<nav class="main">
+	% if items
+		<ul class="nav">
+		% for item in items:
+			% set selected = ""
+			% if item == "two"
+			%	set selected = "selected"
+			% endif
+			<li class="{{ selected }}">
+				<a class="{{ selected }}" href="/{{ item }}">{{ item }}</a>
+			</li>
+		% endfor
+		</ul>
+	% endif
+	</nav>
+% endmacro
+
+% macro side(items)
+	<nav class="sidenav">
+	% if items
+		<ul class="nav">
+		% for item in items:
+			% set selected = ""
+			% if item == "two"
+			%	set selected = "selected"
+			% endif
+			<li class="{{ selected }}">
+				<a class="{{ selected }}" href="/{{ item }}">{{ item }}</a>
+			</li>
+		% endfor
+		</ul>
+	% endif
+	</nav>
+% endmacro
