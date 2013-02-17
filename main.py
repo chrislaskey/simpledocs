@@ -6,7 +6,7 @@ import sys
 def add_python_site_packages_to_sys_path ():
     this_dir = os.path.dirname(__file__)
     packages_path = '.venv/lib/python2.7/site-packages'
-    site_packages_dir = '{0}/{1}'.format(this_dir, packages_path) 
+    site_packages_dir = '{0}/{1}'.format(this_dir, packages_path)
     sys.path.insert(0, this_dir)
     sys.path.insert(0, site_packages_dir)
 
@@ -14,11 +14,12 @@ add_python_site_packages_to_sys_path()
 
 from flask import Flask, abort, request, redirect, url_for, render_template, g
 from markdown import markdown
+from lib.commandline import CommandLine
 import codecs
 app = Flask(__name__)
 
 class MarkdownParser:
-    
+
     def __init__(self, custom_options=None):
         self.options = self._get_default_options()
         if custom_options:
@@ -53,9 +54,38 @@ def hello_world():
         "content": html_content,
         "nav_items": nav_items
     }
+
+
+    # TODO temporary
+
+    # Break search into individual words.
+    #   For each word:
+    #       Validate query.
+    #       Search for file names.
+    #       Search within files.
+    #       Add to list of returned pages
+
+#     def is_valid_query(query):
+#         if not query or '..' in query or query.startswith('/'):
+#             return False
+#         return True
+
+#     search = '../'
+#     if not is_valid_query(search):
+#         return []
+
+#     cli = CommandLine()
+#     command = cli.execute_queue([
+#         ['ls', '-a'],
+#         ['grep', '.py']
+#     ])
+#     templatevars = {
+#         "content": command
+#     }
+
     return render_template('page.html', **templatevars)
 
 if __name__ == '__main__':
     app.jinja_env.line_statement_prefix = '%'
-    # app.debug = True
+    app.debug = True
     app.run()
