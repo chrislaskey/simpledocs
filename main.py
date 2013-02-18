@@ -1,16 +1,7 @@
 #!/usr/bin/env python
 
-import os
-import sys
-
-def add_python_site_packages_to_sys_path ():
-    this_dir = os.path.dirname(__file__)
-    packages_path = '.venv/lib/python2.7/site-packages'
-    site_packages_dir = '{0}/{1}'.format(this_dir, packages_path)
-    sys.path.insert(0, this_dir)
-    sys.path.insert(0, site_packages_dir)
-
-add_python_site_packages_to_sys_path()
+from lib.environment import Environment
+Environment().add_virtualenv_site_packages_to_path()
 
 from flask import Flask, abort, request, redirect, url_for, render_template, g
 from markdown import markdown
