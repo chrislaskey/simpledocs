@@ -2,3 +2,4 @@
 *.coverage
 *.venv*
 environment.json
+production.log
