@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from lib.environment import Environment
-Environment().add_virtualenv_site_packages_to_path()
+Environment().add_virtualenv_site_packages_to_path(__file__)
 
 from flask import Flask, abort, request, redirect, url_for, render_template, g
 from markdown import markdown
