@@ -3,19 +3,19 @@
 % endmacro
 
 % macro main(items)
-	<nav class="main">
+	<nav class="primary">
 	% if items
-		<ul class="nav">
+		<!-- <ul class="nav"> -->
 		% for item in items:
 			% set selected = ""
 			% if item == "two"
 			%	set selected = "selected"
 			% endif
-			<li class="{{ selected }}">
+			<!-- <li class="{{ selected }}"> -->
 				<a class="{{ selected }}" href="/{{ item }}">{{ item }}</a>
-			</li>
+			<!-- </li> -->
 		% endfor
-		</ul>
+		<!-- </ul> -->
 	% endif
 	</nav>
 % endmacro
@@ -23,7 +23,7 @@
 % macro side(items)
 	<nav class="sidenav">
 	% if items
-		<ul class="nav">
+		<ul>
 		% for item in items:
 			% set selected = ""
 			% if item == "two"
