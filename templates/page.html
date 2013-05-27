@@ -17,21 +17,6 @@
 	<link rel="stylesheet" href="/static/css/skeleton.css" media="all"/>
 	<link rel="stylesheet" href="/static/css/main.css" media="all"/>
 	<link rel="stylesheet" href="/static/css/pygments.css" media="all"/>
-	<!-- <link rel="stylesheet" href="/static/css/plugins.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/workless.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/typography.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/font.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/forms.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/tables.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/buttons.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/alerts.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/tabs.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/pagination.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/breadcrumbs.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/helpers.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/scaffolding.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/print.css" media="all"/> -->
-	<!-- <link rel="stylesheet" href="/static/css/application.css" media="all"/> -->
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="/static/js/library.js"></script>
@@ -41,72 +26,76 @@
 
 <body class="{{ body_class }}">
 
-	<header>
-		<div class="wrapper">
+	<header class="wrapper">
+
+		<div class="clearfix" id="header-content">
+
 			<a class="logo" href="/">Simple Docs<span>Flat-file, markdown powered, documentation</span></a>
 
 			% import 'nav.html' as nav
 			{{ nav.main(nav_items) }}
-		</div>
 
+		</div>
 		<!-- % include "search.html" -->
+
+	</header>
+
+	<section class="wrapper" id="wrapper-banner">
 
 		<div class="pagetitle">
 			<div class="wrapper">Documentation</div>
 		</div>
 
-	</header>
+	</section>
 
-	<section class="main">
-		<div class="wrapper main clearfix">
+	<section class="wrapper" id="wrapper-main">
 
-			{{ nav.side(nav_items) }}
-			<!-- <nav class="secondary"> -->
-			<!-- 	<ul> -->
-			<!-- 		<li> -->
-			<!-- 			Getting Started -->
-			<!-- 			<ul> -->
-			<!-- 				<li> -->
-			<!-- 					<a href="/watson/getting-started/installation.html"> Installation </a> -->
-			<!-- 				</li> -->
-			<!-- 			</ul> -->
-			<!-- 		</li> -->
-			<!-- 	</ul> -->
-			<!-- </nav> -->
+		<div class="clearfix" id="main">
 
-			<div class="content">
+			<div id="sidebar">
+				{{ nav.side(nav_items) }}
+			</div>
+
+			<div id="content">
 
 				<section>
-					<div class="content">{{ content|safe }}</div>
+					{{ content|safe }}
 				</section>
 
 			</div>
+
 		</div>
+
 	</section>
 
-	<footer>
-		<div class="sub">
-			<div class="wrapper clearfix">
-				<ul>
-					<li class="title">Title One</li>
-					<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
-					<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
-				</ul>
-				<ul>
-					<li class="title">Title Two</li>
-					<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
-					<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
-				</ul>
-				<ul>
-					<li class="title">Title Three</li>
-					<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
-					<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
-				</ul>
-			</div>
+	<section id="footer-banner">
+
+		<div class="clearfix" id="footer-banner-content">
+			<ul>
+				<li class="title">Title One</li>
+				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
+				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
+			</ul>
+			<ul>
+				<li class="title">Title Two</li>
+				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
+				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
+			</ul>
+			<ul>
+				<li class="title">Title Three</li>
+				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
+				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
+			</ul>
 		</div>
-		<div class="wrapper">
+
+	</section>
+
+	<footer class="wrapper">
+
+		<div id="footer-content">
 			Design by <a href="http://www.blazrobar.com">Blaz Robar</a> and <a href="https://github.com/simoncoulton">Simon Coulton</a>
 		</div>
+
 	</footer>
 
 </body>
