@@ -19,8 +19,8 @@
 	<link rel="stylesheet" href="/static/css/pygments.css" media="all"/>
 
 	<!-- Scripts -->
-	<script type="text/javascript" src="/static/js/library.js"></script>
-	<script type="text/javascript" src="/static/js/common.js"></script>
+	<script src="/static/js/library.js"></script>
+	<script src="/static/js/common.js"></script>
 
 </head>
 
@@ -36,14 +36,17 @@
 			{{ nav.main(nav_items) }}
 
 		</div>
-		<!-- % include "search.html" -->
 
 	</header>
 
 	<section class="wrapper" id="wrapper-banner">
 
-		<div class="pagetitle">
-			<div class="wrapper">Documentation</div>
+		<div id="banner">
+
+			<h3>Documentation</h3>
+
+			<!-- % include "search.html" -->
+
 		</div>
 
 	</section>

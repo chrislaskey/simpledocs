@@ -16,7 +16,7 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 300;
-	src: local('Open Sans Light'), local('OpenSans-Light'), 
+	src: local('Open Sans Light'), local('OpenSans-Light'),
 		 url('../fonts/OpenSans-Light.woff') format('woff'),
 		 url('../fonts/OpenSans-Light.ttf')  format('truetype');
 }
@@ -24,7 +24,7 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Open Sans Regular'), local('OpenSans-Regular'), 
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
 		 url('../fonts/OpenSans-Regular.woff') format('woff'),
 		 url('../fonts/OpenSans-Regular.ttf')  format('truetype');
 }
@@ -32,7 +32,7 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 600;
-	src: local('Open Sans Semibold'), local('OpenSans-Semibold'), 
+	src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
 		 url('../fonts/OpenSans-Semibold.woff') format('woff'),
 		 url('../fonts/OpenSans-Semibold.ttf')  format('truetype');
 }
@@ -40,7 +40,7 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 700;
-	src: local('Open Sans Bold'), local('OpenSans-Bold'), 
+	src: local('Open Sans Bold'), local('OpenSans-Bold'),
 		 url('../fonts/OpenSans-Bold.woff') format('woff'),
 		 url('../fonts/OpenSans-Bold.ttf')  format('truetype');
 }
@@ -132,6 +132,15 @@ footer {
 
 /* Header content */
 
+header a {
+	color:#fff;
+}
+
+	header a:hover {
+		color:#08c;
+		text-decoration:none;
+	}
+
 header .logo {
 	font-size: 24px;
 	float: left;
@@ -150,18 +159,31 @@ header nav {
 	font-size: 24px;
 }
 
-	header nav a {
-		color: #fff;
-		display: inline-block;
-		font-size: 0.6em;
-		text-decoration: none;
-		margin-left: 16px;
-		padding-top: 10px;
+	header nav ul {
+		display:inline-block;
+		list-style:none;
+		margin:0px;
+		padding:0px;
 	}
+
+		header nav ul li {
+			display:inline-block;
+			margin:0px;
+			padding:0px;
+		}
+
+			header nav a {
+				color: #fff;
+				display: inline-block;
+				font-size: 0.6em;
+				text-decoration: none;
+				margin-left: 16px;
+				padding-top: 10px;
+			}
 
 /* Banner content */
 
-.pagetitle {
+#banner {
 	color: #fff;
 	font-size: 30px;
 	margin: 0px auto;
@@ -169,6 +191,15 @@ header nav {
 	text-shadow: 0 1px #009fcc;
 	width: 940px;
 }
+
+	#banner h3{
+		font-size:30px;
+		font-weight:normal;
+		line-height:20px;
+		margin:0px;
+		padding:0px;
+		text-rendering:auto;
+	}
 
 /* Sidebar content */
 
