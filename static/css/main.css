@@ -84,6 +84,15 @@ header {
 	box-shadow: -6px 0 6px rgba(0, 0, 0, 0.05);
 }
 
+	#banner {
+		color: #fff;
+		font-size: 30px;
+		margin: 0px auto;
+		padding: 40px 0;
+		text-shadow: 0 1px #009fcc;
+		width: 940px;
+	}
+
 #wrapper-main{
 	background:#f8f8f8;
 	padding:40px 0px;
@@ -183,22 +192,38 @@ header nav {
 
 /* Banner content */
 
-#banner {
-	color: #fff;
-	font-size: 30px;
-	margin: 0px auto;
-	padding: 40px 0;
-	text-shadow: 0 1px #009fcc;
-	width: 940px;
+#banner h3{
+	float:left;
+	font-size:30px;
+	font-weight:normal;
+	line-height:20px;
+	margin:0px;
+	padding:0px;
+	text-rendering:auto;
 }
 
-	#banner h3{
-		font-size:30px;
-		font-weight:normal;
-		line-height:20px;
+#banner form.search{
+	float:right;
+}
+
+form.search {
+	display:inline-block;
+	font-size:17px;
+	margin:0px;
+	padding:0px;
+}
+
+	form.search input.text {
+		border:none;
+		padding:3px;
+	}
+
+	form.search input.submit {
+		background:#fff;
+		border:none;
 		margin:0px;
-		padding:0px;
-		text-rendering:auto;
+		padding:3px;
+		text-transform:lowercase;
 	}
 
 /* Sidebar content */
