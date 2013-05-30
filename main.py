@@ -7,6 +7,7 @@ from flask import Flask, abort, request, redirect, url_for, render_template, g
 from lib.commandline import CommandLine
 from lib.markdownparser import MarkdownParser
 from lib.utilities import read_file
+from lib.search import search
 app = Flask(__name__)
 
 @app.route('/')
@@ -20,35 +21,6 @@ def hello_world():
         "content": html_content,
         "nav_items": nav_items
     }
-
-
-    # TODO temporary
-
-    # Break search into individual words.
-    #   For each word:
-    #       Validate query.
-    #       Search for file names.
-    #       Search within files.
-    #       Add to list of returned pages
-
-#     def is_valid_query(query):
-#         if not query or '..' in query or query.startswith('/'):
-#             return False
-#         return True
-
-#     search = '../'
-#     if not is_valid_query(search):
-#         return []
-
-#     cli = CommandLine()
-#     command = cli.execute_queue([
-#         ['ls', '-a'],
-#         ['grep', '.py']
-#     ])
-#     templatevars = {
-#         "content": command
-#     }
-
     return render_template('page.html', **templatevars)
 
 if __name__ == '__main__':
