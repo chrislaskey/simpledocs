@@ -4,40 +4,15 @@ from lib.environment import Environment
 Environment().add_virtualenv_site_packages_to_path(__file__)
 
 from flask import Flask, abort, request, redirect, url_for, render_template, g
-from markdown import markdown
 from lib.commandline import CommandLine
-import codecs
+from lib.markdownparser import MarkdownParser
+from lib.utilities import read_file
 app = Flask(__name__)
-
-class MarkdownParser:
-
-    def __init__(self, custom_options=None):
-        self.options = self._get_default_options()
-        if custom_options:
-            self.options = self.options.update(custom_options)
-
-    def _get_default_options(self):
-        options = {
-            "output_format": "html5",
-            "safe_mode": "escape"
-        }
-        return options
-
-    def parse(self, unicode_text):
-        parsed_html = markdown(unicode_text, **self.options)
-        return parsed_html
-
-class FileReader:
-
-    def read(self, file_path):
-        input_file = codecs.open(file_path, mode="r", encoding="utf-8")
-        unicode_text = input_file.read()
-        return unicode_text
 
 @app.route('/')
 def hello_world():
     test_file_path = "readme.md"
-    unicode_text = FileReader().read(test_file_path)
+    unicode_text = read_file(test_file_path)
     markdown_parser = MarkdownParser()
     html_content = markdown_parser.parse(unicode_text)
     nav_items = ["one", "two", "three"]

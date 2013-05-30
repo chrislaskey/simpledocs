@@ -229,7 +229,7 @@ form.search {
 /* Sidebar content */
 
 #sidebar nav {
-  background: -webkit-linear-gradient(left, #fff 0%, #fff 20%, #fff 80%, #f6f6f6 100%);
+	background: -webkit-linear-gradient(left, #fff 0%, #fff 20%, #fff 80%, #f6f6f6 100%);
 	background: linear-gradient(to right, #fff 0%, #fff 20%, #fff 80%, #f6f6f6 100%);
 }
 
