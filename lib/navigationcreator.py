@@ -7,18 +7,22 @@ class NavigationCreator:
 
     def create(self, path):
         self.nav = self._walk(path)
+        import pprint
+        pp = pprint.PrettyPrinter()
+        pp.pprint(self.nav)
         return self.nav
 
     def _walk(self, path):
         for root, dirs, files in os.walk(path):
-            join = os.path.join
-            files = [join(root, x) for x in files]
+            contents = {
+                "root": root,
+                "files": files,
+                "dirs": []
+            }
 
             if dirs:
-                dir_files = []
                 for dir in dirs:
-                    fulldir = os.path.join(root, dir)
-                    dir_files = dir_files + self._walk(fulldir)
-                return files + dir_files
-            else:
-                return files
+                    dir_path = os.path.join(root, dir)
+                    dir_files = self._walk(dir_path)
+                    contents["dirs"].append(dir_files)
+            return contents
