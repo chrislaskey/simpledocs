@@ -32,9 +32,6 @@
 
 			<a class="logo" href="/">Simple Docs<span>Flat-file, markdown powered, documentation</span></a>
 
-			% import 'nav.html' as nav
-			{{ nav.main(nav_items) }}
-
 		</div>
 
 	</header>
@@ -56,6 +53,7 @@
 		<div class="clearfix" id="main">
 
 			<div id="sidebar">
+				% import 'nav.html' as nav
 				{{ nav.side(nav_items) }}
 			</div>
 

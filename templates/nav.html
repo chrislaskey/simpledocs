@@ -1,25 +1,39 @@
-% macro _get_nav(items, classname)
-	<nav class="{{ classname }}">
-	% if items
-		<ul class="nav">
-		% for item in items:
-			% set selected = ""
-			% if item == "two"
-			%	set selected = "selected"
-			% endif
-			<li class="{{ selected }}">
-				<a class="{{ selected }}" href="/{{ item }}">{{ item }}</a>
-			</li>
-		% endfor
-		</ul>
-	% endif
-	</nav>
-% endmacro
-
 % macro main(items)
 	{{ _get_nav(items, "primary") }}
 % endmacro
 
 % macro side(items)
 	{{ _get_nav(items, "sidenav") }}
+% endmacro
+
+% macro _get_nav(items, classname)
+	<nav class="{{ classname }}">
+	% if items
+		{{ _get_nav_items(items) }}
+	% endif
+	</nav>
+% endmacro
+
+% macro _get_nav_items(item)
+	% set selected = ""
+
+	<ul>
+	% if item.dirs
+		% for dir in item.dirs
+		<li class="{{ selected }}">
+			<span class="directory">{{ dir.level }}</span>
+			{{ _get_nav_items(dir) }}
+		</li>
+		% endfor
+	% endif
+
+	% if item.files
+		% for file in item.files
+		<li class="{{ selected }}">
+			<a class="{{ selected }}" href="/{{ item.root }}/{{ file }}">{{ file }}</a>
+		</li>
+		% endfor
+	% endif
+	</ul>
+	
 % endmacro
