@@ -7,15 +7,14 @@ class NavigationCreator:
 
     def create(self, path):
         self.nav = self._walk(path)
-        import pprint
-        pp = pprint.PrettyPrinter()
-        pp.pprint(self.nav)
         return self.nav
 
     def _walk(self, path):
         for root, dirs, files in os.walk(path):
+            level = self._get_relative_root(root)
             contents = {
                 "root": root,
+                "level": level,
                 "files": files,
                 "dirs": []
             }
@@ -26,3 +25,10 @@ class NavigationCreator:
                     dir_files = self._walk(dir_path)
                     contents["dirs"].append(dir_files)
             return contents
+
+    def _get_relative_root(self, root):
+        last_slash = root.rfind('/')
+        if not last_slash:
+            return root
+        cut_from = last_slash + 1
+        return root[cut_from:]
