@@ -26,5 +26,7 @@
 #         "content": command
 #     }
 
-def search():
-    pass
+class SearchParser:
+
+    def __init__():
+        pass

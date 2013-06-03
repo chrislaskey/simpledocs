@@ -7,8 +7,8 @@ from flask import Flask, abort, request, redirect, url_for, render_template, g
 from lib.commandline import CommandLine
 from lib.markdownparser import MarkdownParser
 from lib.navigationcreator import NavigationCreator
+from lib.searchparser import SearchParser
 from lib.utilities import read_file
-from lib.search import search
 app = Flask(__name__)
 
 @app.route('/')
@@ -24,7 +24,22 @@ def hello_world():
     }
     return render_template('page.html', **templatevars)
 
+@app.route('/search', methods = ['GET', 'POST'])
+def search():
+    base_path = "docs"
+    # test_file_path = "readme.md"
+    # unicode_text = read_file(test_file_path)
+    # html_content = MarkdownParser().parse(unicode_text)
+
+    if request.method == 'POST':
+        search_value = request.form.get('search', '')
+    nav_items = NavigationCreator().create(base_path)
+    templatevars = {
+        "content": search_value,
+        "nav_items": nav_items
+    }
+    return render_template('site/search.html', **templatevars)
+
 if __name__ == '__main__':
-    app.jinja_env.line_statement_prefix = '%'
     app.debug = True
     app.run()

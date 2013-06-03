@@ -190,6 +190,40 @@ header nav {
 				padding-top: 10px;
 			}
 
+header form.search{
+	float:right;
+}
+
+form.search {
+	display:inline-block;
+	font-size:15px;
+	margin:0px;
+	padding:0px;
+}
+
+	form.search input.text {
+		background:rgba(255,255,255,0.2);
+		border:none;
+		color:rgba(255,255,255,0.6);
+		display:inline-block;
+		line-height:18px;
+		margin:0px;
+		padding:3px 6px;
+	}
+
+	form.search input.submit {
+		background:rgba(255,255,255,0.2);
+		border:none;
+		color:rgba(255,255,255,0.6);
+		display:inline-block;
+		font-size:13px;
+		font-weight:300;
+		line-height:18px;
+		margin:0px;
+		padding:3px 6px;
+	}
+
+
 /* Banner content */
 
 #banner h3{
@@ -201,30 +235,6 @@ header nav {
 	padding:0px;
 	text-rendering:auto;
 }
-
-#banner form.search{
-	float:right;
-}
-
-form.search {
-	display:inline-block;
-	font-size:17px;
-	margin:0px;
-	padding:0px;
-}
-
-	form.search input.text {
-		border:none;
-		padding:3px;
-	}
-
-	form.search input.submit {
-		background:#fff;
-		border:none;
-		margin:0px;
-		padding:3px;
-		text-transform:lowercase;
-	}
 
 /* Sidebar content */
 

@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	{% include "structure/head.html" %}
 
-	<!-- Title -->
-	<title>{{ page_title }}</title>
-
-	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="/favicon.png" />
-	
-	<!-- Meta -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Styles -->
-	<link rel="stylesheet" href="/static/css/skeleton.css" media="all"/>
-	<link rel="stylesheet" href="/static/css/main.css" media="all"/>
-	<link rel="stylesheet" href="/static/css/pygments.css" media="all"/>
-
-	<!-- Scripts -->
-	<script src="/static/js/library.js"></script>
-	<script src="/static/js/common.js"></script>
-
+	{% block head %}
+	{% endblock %}
 </head>
 
 <body class="{{ body_class }}">
@@ -32,6 +15,8 @@
 
 			<a class="logo" href="/">Simple Docs<span>Flat-file, markdown powered, documentation</span></a>
 
+			{% include "structure/search.html" %}
+
 		</div>
 
 	</header>
@@ -40,9 +25,11 @@
 
 		<div class="clearfix" id="banner">
 
-			<h3>Documentation</h3>
-
-			% include "search.html"
+			{% if banner %}
+				<h3>{{ banner }}</h3>
+			{% else %}
+				<h3>Documentation</h3>
+			{% endif %}
 
 		</div>
 
@@ -53,16 +40,14 @@
 		<div class="clearfix" id="main">
 
 			<div id="sidebar">
-				% import 'nav.html' as nav
+				{% import 'structure/nav.html' as nav %}
 				{{ nav.side(nav_items) }}
 			</div>
 
 			<div id="content">
-
-				<section>
+				{% block content %}
 					{{ content|safe }}
-				</section>
-
+				{% endblock %}
 			</div>
 
 		</div>
