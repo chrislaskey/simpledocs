@@ -9,7 +9,8 @@ class PageTemplateVariableParser:
     def set(self, name, value):
         self.templatevars[name] = value
 
-    def parse(self, request):
+    def parse(self, request, additional_data = {}):
+        self.data = additional_data
         self._add_core_templatevars(request)
         self._parse_templatevars()
         return self.templatevars
@@ -19,4 +20,5 @@ class PageTemplateVariableParser:
         self.templatevars.update(vars)
 
     def _parse_templatevars(self):
-        self.templatevars['nav_items'] = NavigationCreator().create('docs')
+        dir = self.data.get('documents_directory', '')
+        self.templatevars['nav_items'] = NavigationCreator().create(dir)

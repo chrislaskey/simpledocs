@@ -12,12 +12,21 @@ from application.pageprocessing import common_page_processing
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
+@app.route('/search', methods = ['GET', 'POST'])
+def search():
     common_page_processing()
 
-    # TODO: Add base_path to pagetemplatevarsparser
-    base_path = 'docs'
+    search_value = 'No search value found'
+    if request.method == 'POST':
+        search_value = request.form.get('search', '')
+    g.templatevars['content'] = search_value
+
+    return render_template('site/search.html', **g.templatevars)
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def hello_world(path):
+    common_page_processing()
 
     test_file_path = 'readme.md'
     unicode_text = read_file(test_file_path)
@@ -25,19 +34,6 @@ def hello_world():
     g.templatevars['content'] = html_content
 
     return render_template('page.html', **g.templatevars)
-
-@app.route('/search', methods = ['GET', 'POST'])
-def search():
-    common_page_processing()
-
-    # TODO: Add base_path to pagetemplatevarsparser
-    base_path = 'docs'
-
-    if request.method == 'POST':
-        search_value = request.form.get('search', '')
-    g.templatevars['content'] = search_value
-
-    return render_template('site/search.html', **g.templatevars)
 
 if __name__ == '__main__':
     app.debug = True
