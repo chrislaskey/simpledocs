@@ -29,9 +29,9 @@
 
 	{% if item.files %}
 		{% for file in item.files %}
-		<li class="{{ selected }}">
-			<a class="{{ selected }}" href="/{{ item.root }}/{{ file }}">{{ file }}</a>
-		</li>
+			<li class="{{ selected }}">
+				<a class="{{ selected }}" href="/{{ item.root }}/{{ file.path }}">{{ file.name }}</a>
+			</li>
 		{% endfor %}
 	{% endif %}
 	</ul>

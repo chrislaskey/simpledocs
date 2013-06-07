@@ -57,10 +57,6 @@ html, body {
 	-webkit-font-smoothing: antialiased;
 }
 
-p {
-	color: #7f7f7f;
-}
-
 /* Structure */
 
 .wrapper {
@@ -268,7 +264,7 @@ form.search {
 
 #sidebar nav > ul li {
 	color: #606060;
-	margin:8px 0px 8px 0px;
+	margin:12px 0px 12px 0px;
 }
 
 #sidebar nav ul li .active {
@@ -287,13 +283,13 @@ form.search {
 	font-weight: normal;
 	text-decoration: none;
 	display: block;
-	padding: 2px 0 2px 6px;
+	padding: 0px 0px 0px 6px;
 }
 
 #sidebar nav ul li .active a {
 	background: #00cced;
 	color: #fff;
-	padding: 6px 0 6px 6px;
+	padding: 0px 0px 0px 6px;
 	border-right: 4px solid #13b7d2;
 }
 
