@@ -3,3 +3,4 @@
 *.venv*
 environment.json
 production.log
+docs*
