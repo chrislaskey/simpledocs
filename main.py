@@ -5,9 +5,9 @@ Environment().add_virtualenv_site_packages_to_path(__file__)
 
 from flask import Flask, abort, request, redirect, url_for, render_template, g
 from lib.commandline import CommandLine
+from lib.contentloader import ContentLoader
 from lib.markdownparser import MarkdownParser
 from lib.searchparser import SearchParser
-from lib.utilities import read_file
 from application.pageprocessing import common_page_processing
 
 app = Flask(__name__)
@@ -28,8 +28,9 @@ def search():
 def hello_world(path):
     common_page_processing()
 
-    test_file_path = 'readme.md'
-    unicode_text = read_file(test_file_path)
+    unicode_text = ContentLoader().load(path)
+    if not unicode_text:
+        unicode_text = ContentLoader().load('readme.md')
     html_content = MarkdownParser().parse(unicode_text)
     g.templatevars['content'] = html_content
 
