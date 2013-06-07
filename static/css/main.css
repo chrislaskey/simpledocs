@@ -243,6 +243,20 @@ form.search {
 	background: linear-gradient(to right, #fff 0%, #fff 20%, #fff 80%, #f6f6f6 100%);
 }
 
+#sidebar nav {
+
+}
+
+#sidebar nav a {
+	color: #4a4a4a;
+	margin: 0;
+}
+
+	#sidebar nav a {
+		color: #4a4a4a;
+		margin: 0;
+	}
+
 #sidebar nav ul {
 	list-style: none;
 	margin: 0;
@@ -252,10 +266,9 @@ form.search {
 	padding: 20px 0 20px 20px;
 }
 
-#sidebar nav > ul > li {
+#sidebar nav > ul li {
 	color: #606060;
-	padding: 10px 0 10px 10px;
-	font-size: 1.2em;
+	margin:8px 0px 8px 0px;
 }
 
 #sidebar nav ul li .active {
@@ -263,16 +276,14 @@ form.search {
 }
 
 #sidebar nav ul ul {
-	margin-top: 10px;
+	margin:0px 0px 0px 12px;
 }
 
 #sidebar nav ul li li {
-	font-size: 0.8em;
 	border-bottom: none;
 }
 
 #sidebar nav ul li li a {
-	color: #919191;
 	font-weight: normal;
 	text-decoration: none;
 	display: block;
