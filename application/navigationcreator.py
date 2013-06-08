@@ -57,6 +57,9 @@ class NavigationCreator:
 
     def _parse_filename(self, filename):
         extension = filename.find('.')
-        without_extension = filename[:extension]
+        if extension != -1:
+            without_extension = filename[:extension]
+        else:
+            without_extension = filename
         without_prefix = self._strip_numeric_prefix(without_extension)
         return self._create_title_from_slug(without_prefix)
