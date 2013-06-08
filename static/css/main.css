@@ -259,9 +259,10 @@ form.search {
 		}
 
 			#sidebar nav .directory {
-				color:#046;
-				font-size:1.1em;
+				font-size:0.9em;
+				font-weight:600;
 				line-height:1em;
+				text-transform:uppercase;
 			}
 
 			#sidebar nav a {
