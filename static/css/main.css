@@ -248,50 +248,35 @@ form.search {
 	padding:20px 0px;
 }
 
-#sidebar nav .directory {
-	font-size:1.1em;
-	line-height:1em;
-}
-
-#sidebar nav a {
-	color: #4a4a4a;
-	font-size:0.9em;
-	margin: 0;
-}
-
-	#sidebar nav a {
-		color: #4a4a4a;
-		margin: 0;
+	#sidebar nav ul {
+		list-style: none;
+		margin: 10px 0px 10px 20px;
 	}
 
-#sidebar nav ul {
-	list-style: none;
-	margin: 10px 0px 10px 20px;
-}
+		#sidebar nav ul li {
+			color: #606060;
+			margin: 8px 0px 8px 0px;
+		}
 
-#sidebar nav ul li {
-	color: #606060;
-	margin: 8px 0px 8px 0px;
-}
+			#sidebar nav .directory {
+				color:#046;
+				font-size:1.1em;
+				line-height:1em;
+			}
 
-#sidebar nav ul li .active {
-	border: 0;
-}
+			#sidebar nav a {
+				color: #4a4a4a;
+				font-size:0.9em;
+				margin: 0;
+			}
 
-#sidebar nav ul ul {
+			#sidebar nav ul li .active {
+				border: 0;
+			}
 
-}
-
-#sidebar nav ul li li {
-	border-bottom: none;
-}
-
-#sidebar nav ul li .active a {
-	background: #00cced;
-	color: #fff;
-	padding: 0px 0px 0px 6px;
-	border-right: 4px solid #13b7d2;
-}
+				#sidebar nav ul li .active a {
+					color: #08c;
+				}
 
 /* Content elements */
 
