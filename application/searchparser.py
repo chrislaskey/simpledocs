@@ -11,8 +11,8 @@ class SearchParser:
         terms = _SearchTermParser().parse(search_string)
         matches = _SearchResultsParser()._search_for_matches(terms)
         results = { 'terms': terms, 'matches': matches }
-        print(results)
         return results
+
 
 class _SearchTermParser:
 
@@ -57,7 +57,7 @@ class _SearchResultsParser:
         self._compile_command_results(results, 3)
 
     def _search_file_contents(self, term):
-        command = ['grep', '-l', '-r', term, 'docs/']
+        command = ['grep', '-l', '-r', '-i', term, 'docs/']
         options = {'raise_exception_on_failure': False}
         results = self.cli.execute(command, **options)
         self._compile_command_results(results)

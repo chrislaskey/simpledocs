@@ -2,4 +2,27 @@
 
 {% block content %}
 	<h1>Search Results</h1>
+	<p>A search for the terms {{ _search_terms(search_results) }} returned:</p>
+	{{ _search_results(search_results) }}
 {% endblock %}
+
+{% macro _search_terms(search_results) %}
+	{% for term in search_results.terms %}
+		<code>{{term}}</code>
+	{% endfor %}
+{% endmacro %}
+
+{% macro _search_results(search_results) %}
+	{% set matches = search_results.matches %}
+	{% if not matches %}
+		<p>No results found</p>
+	{% else %}
+		<ul class="search_results">
+			{% for match in matches %}
+			<li>
+				<a href="/{{match}}">{{match}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endmacro %}
