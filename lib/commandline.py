@@ -3,7 +3,7 @@ import subprocess
 class CommandLine:
 
     def execute(self, command, stdin=None, stdout=None, stderr=None,
-                return_boolean=False):
+                return_boolean=False, raise_exception_on_failure=True):
         '''
         Execute a command on the system. Return stdout on success, raise an
         exception on failure, and log result in either case. If return_boolean
@@ -39,10 +39,14 @@ class CommandLine:
         # Otherwise return stdout on success and raise an error on failure.
         if is_success:
             return stdout
-        else:
-            raise Exception('Stdout: {0} | Stderr: {1}'.format(stdout, stderr))
 
-    def execute_queue(self, commands, return_boolean=False):
+        if raise_exception_on_failure:
+            raise Exception('Stdout: {0} | Stderr: {1}'.format(stdout, stderr))
+        else:
+            return ''
+
+    def execute_queue(self, commands, return_boolean=False,
+                      raise_exception_on_failure=True):
         '''
         Execute multiple piped commands on the system. The argument commands
         should be a list containing a sublist for each command. The order of the
@@ -79,9 +83,11 @@ class CommandLine:
         # Otherwise return stdout on success and raise an error on failure.
         if is_success:
             return stdout
-        else:
-            raise Exception('Stdout: {0} | Stderr: {1}'.format(stdout, stderr))
 
+        if raise_exception_on_failure:
+            raise Exception('Stdout: {0} | Stderr: {1}'.format(stdout, stderr))
+        else:
+            return ''
 
 if __name__ == "__main__":
     raise Exception("Library functions only, no direct access")
