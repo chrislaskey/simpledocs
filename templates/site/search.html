@@ -1,9 +1,14 @@
 {% extends "page.html" %}
 
 {% block content %}
-	<h1>Search Results</h1>
+
+	<h1>Search results</h1>
 	<p>A search for the terms {{ _search_terms(search_results) }} returned:</p>
 	{{ _search_results(search_results) }}
+
+	<h3>About search</h3>
+	<p>The search functionality breaks all queries down into individual terms (a-Z and 0-9 only). Each term is searched for separately and compiled into a weighted result. Searches are inclusive as possible, erring on the side of false positives.</p>
+
 {% endblock %}
 
 {% macro _search_terms(search_results) %}
@@ -14,15 +19,16 @@
 
 {% macro _search_results(search_results) %}
 	{% set matches = search_results.matches %}
-	{% if not matches %}
-		<p>No results found</p>
-	{% else %}
-		<ul class="search_results">
+
+	<ul class="search_results">
+		{% if not matches %}
+			<li><strong>No results found</strong></li>
+		{% else %}
 			{% for match in matches %}
-			<li>
-				<a href="/{{match}}">{{match}}</a>
-			</li>
+				<li>
+					<a href="/{{match}}">{{match}}</a>
+				</li>
 			{% endfor %}
-		</ul>
-	{% endif %}
+		{% endif %}
+	</ul>
 {% endmacro %}
