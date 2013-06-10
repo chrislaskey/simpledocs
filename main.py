@@ -21,7 +21,7 @@ def parse_search_terms():
     return redirect(redirect_to)
 
 
-@app.route('/search', defaults={'terms': ''})
+@app.route('/search/', defaults={'terms': ''})
 @app.route('/search/<path:terms>')
 def search(terms):
     common_page_processing()
