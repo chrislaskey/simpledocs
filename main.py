@@ -9,16 +9,18 @@ from lib.contentloader import ContentLoader
 from lib.markdownparser import MarkdownParser
 from application.pageprocessing import common_page_processing
 from application.searchparser import SearchParser
+from application.searchtermparser import SearchTermParser
+
 
 app = Flask(__name__)
 
+
 @app.route('/parse-search-terms', methods = ['post'])
-def parse_search_terms(terms):
-    pass
-    # search_terms = searchter
-    # search_results = searchparser().search(request)
-    # g.templatevars['search_results'] = search_results
-    # return render_template('site/search.html', **g.templatevars)
+def parse_search_terms():
+    search_term_uri = SearchTermParser().get_as_uri(request)
+    redirect_to = '/search' + search_term_uri
+    return redirect(redirect_to)
+
 
 @app.route('/search', defaults={'terms': ''})
 @app.route('/search/<path:terms>')
@@ -27,6 +29,7 @@ def search(terms):
     search_results = SearchParser().search(terms)
     g.templatevars['search_results'] = search_results
     return render_template('site/search.html', **g.templatevars)
+
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
@@ -40,6 +43,7 @@ def page(path):
     g.templatevars['content'] = html_content
 
     return render_template('page.html', **g.templatevars)
+
 
 if __name__ == '__main__':
     app.debug = True
