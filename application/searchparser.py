@@ -1,38 +1,56 @@
-import re
 import os.path
 from collections import defaultdict
 from lib.commandline import CommandLine
 
+# TODO: remove re import in searchtermparser.py refactor
+import re
+
 
 class SearchParser:
 
-    def search(self, request):
-        search_string = request.form.get('search', '')
-        terms = _SearchTermParser().parse(search_string)
+    term_limit = 5
+
+    def search(self, path):
+        terms = self._get_terms_from_path(path)
         matches = _SearchResultsParser()._search_for_matches(terms)
         results = { 'terms': terms, 'matches': matches }
         return results
 
-
-class _SearchTermParser:
-
-    ''' Parses raw search strings into filtered search terms '''
-
-    word_limit = 5
-
-    def parse(self, search_string):
-        words = self._split_into_words(search_string)
-        all_terms = self._filter_words(words)
-        terms = all_terms[:self.word_limit]
+    def _get_terms_from_path(self, path):
+        words = path.split('/')
+        filtered = _SearchTermFilter().filter(words)
+        terms = filtered[:self.term_limit]
         return terms
 
-    def _split_into_words(self, search_string):
-        split_limit = self.word_limit + 1
-        words = search_string.split(' ', split_limit)
-        return words
 
-    def _filter_words(self, words):
-       filtered = [ re.sub('[^a-zA-Z0-9-_]*', '', x) for x in words]
+# TODO: Deprecated, move to searchtermparser.py and make public
+# class _SearchTermParser:
+
+#     ''' Parses raw search strings into filtered search terms '''
+
+#     word_limit = 5
+
+#     def parse(self, search_string):
+#         words = self._split_into_words(search_string)
+#         all_terms = self._filter_words(words)
+#         terms = all_terms[:self.word_limit]
+#         return terms
+
+#     def _split_into_words(self, search_string):
+#         split_limit = self.word_limit + 1
+#         words = search_string.split(' ', split_limit)
+#         return words
+
+#     def _filter_words(self, words):
+#        filtered = [ re.sub('[^a-zA-Z0-9-_]*', '', x) for x in words]
+#        return filtered
+
+
+# TODO: Temporary, move to searchtermparser.py in next refactor
+class _SearchTermFilter:
+
+    def filter(self, terms):
+       filtered = [ re.sub('[^a-zA-Z0-9-_]*', '', x) for x in terms if x]
        return filtered
 
 

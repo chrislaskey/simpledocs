@@ -12,10 +12,19 @@ from application.searchparser import SearchParser
 
 app = Flask(__name__)
 
-@app.route('/search', methods = ['GET', 'POST'])
-def search():
+@app.route('/parse-search-terms', methods = ['post'])
+def parse_search_terms(terms):
+    pass
+    # search_terms = searchter
+    # search_results = searchparser().search(request)
+    # g.templatevars['search_results'] = search_results
+    # return render_template('site/search.html', **g.templatevars)
+
+@app.route('/search', defaults={'terms': ''})
+@app.route('/search/<path:terms>')
+def search(terms):
     common_page_processing()
-    search_results = SearchParser().search(request)
+    search_results = SearchParser().search(terms)
     g.templatevars['search_results'] = search_results
     return render_template('site/search.html', **g.templatevars)
 
