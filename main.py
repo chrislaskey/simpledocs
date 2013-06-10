@@ -4,7 +4,6 @@ from lib.environment import Environment
 Environment().add_virtualenv_site_packages_to_path(__file__)
 
 from flask import Flask, abort, request, redirect, url_for, render_template, g
-from lib.commandline import CommandLine
 from lib.contentloader import ContentLoader
 from lib.markdownparser import MarkdownParser
 from application.pageprocessing import common_page_processing
