@@ -44,6 +44,18 @@ def page(path):
     return render_template('page.html', **g.templatevars)
 
 
+@app.errorhandler(404)
+def not_found(error):
+    common_page_processing()
+    return render_template('errors/404.html', **g.templatevars), 404
+
+
+@app.errorhandler(500)
+def server_error(error):
+    common_page_processing()
+    return render_template('errors/500.html', **g.templatevars), 500
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
