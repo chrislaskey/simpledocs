@@ -1,39 +1,80 @@
 {% macro main(items) %}
-	{{ _get_nav(items, "primary") }}
-{% endmacro %}
-
-{% macro side(items) %}
-	{{ _get_nav(items, "sidenav") }}
-{% endmacro %}
-
-{% macro _get_nav(items, classname) %}
-	<nav class="{{ classname }}">
-	{% if items %}
-		{{ _get_nav_items(items) }}
-	{% endif %}
+	<nav class="primary">
+		{% if items %}
+		<form action="" method="get">
+			<select name="nav">
+				<option value="">Navigation</option>
+				<option value="" disabled>&nbsp;</option>
+				{{ _get_nav_items(items, "option") }}
+			</select>
+		</form>
+		{% endif %}
 	</nav>
 {% endmacro %}
 
-{% macro _get_nav_items(item) %}
-	{% set selected = "" %}
+{% macro side(items) %}
+	<nav class="sidenav">
+		{% if items %}
+		<ul>
+			{{ _get_nav_items(items, "li") }}
+		</ul>
+		{% endif %}
+	</nav>
+{% endmacro %}
 
-	<ul>
-	{% if item.dirs %}
-		{% for dir in item.dirs %}
-		<li class="{{ selected }}">
-			<span class="directory">{{ dir.level }}</span>
-			{{ _get_nav_items(dir) }}
-		</li>
-		{% endfor %}
-	{% endif %}
+{% macro _get_nav_items(item, type, depth=0) %}
+	{% set selected = "" %}
 
 	{% if item.files %}
 		{% for file in item.files %}
-			<li class="{{ selected }}">
-				<a class="{{ selected }}" href="/{{ item.root }}/{{ file.path }}">{{ file.name }}</a>
-			</li>
+			{{ _get_nav_item_file(file, item.root, type, depth, selected) }}
 		{% endfor %}
 	{% endif %}
-	</ul>
-	
+
+	{% if item.dirs %}
+		{% for dir in item.dirs %}
+			{{ _get_nav_item_dir(dir, type, depth, selected) }}
+		{% endfor %}
+	{% endif %}
+{% endmacro %}
+
+{% macro _get_nav_item_dir(dir, type, depth, selected) %}
+
+	{% if type == "option" %}
+
+		{% set spaces = ("&nbsp;" * 4) * depth %}
+
+		<option value="" disabled>&nbsp;</option>
+		<option value="" disabled>{{ spaces|safe }}{{ dir.level }}</option>
+
+		{% set depth = depth + 1 %}
+		{{ _get_nav_items(dir, type, depth) }}
+
+	{% elif type == "li" %}
+
+		<li class="{{ selected }}">
+			<span class="directory">{{ dir.level }}</span>
+			<ul>
+				{% set depth = depth + 1 %}
+				{{ _get_nav_items(dir, type) }}
+			</ul>
+		</li>
+
+	{% endif %}
+{% endmacro %}
+
+{% macro _get_nav_item_file(file, root, type, depth, selected) %}
+	{% if type == "option" %}
+
+		{% set spaces = ("&nbsp;" * 4) * depth %}
+
+		<option value="/{{ root }}/{{ file.path }}">{{ spaces|safe }}{{ file.name }}</option>
+
+	{% elif type == "li" %}
+
+		<li class="{{ selected }}">
+			<a class="{{ selected }}" href="/{{ root }}/{{ file.path }}">{{ file.name }}</a>
+		</li>
+
+	{% endif %}
 {% endmacro %}

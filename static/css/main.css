@@ -257,6 +257,10 @@ form.search {
 	text-rendering:auto;
 }
 
+#banner nav{
+	float:right;
+}
+
 /* Sidebar content */
 
 #sidebar nav {

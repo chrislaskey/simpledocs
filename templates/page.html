@@ -31,14 +31,8 @@
 				<h3>Documentation</h3>
 			{% endif %}
 
-			<form action="" method="post">
-				<select name="navigation">
-					<option>To Parse</option>
-					<option>&nbsp;&nbsp;&nbsp;&nbsp;Virtualization</option>
-					<option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Virtual Machines Theory</option>
-					<option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proxmox Host Setup</option>
-				</select>
-			</form>
+			{% import 'structure/nav.html' as nav %}
+			{{ nav.main(nav_items) }}
 
 		</div>
 
@@ -49,7 +43,6 @@
 		<div class="clearfix" id="main">
 
 			<div id="sidebar">
-				{% import 'structure/nav.html' as nav %}
 				{{ nav.side(nav_items) }}
 			</div>
 
