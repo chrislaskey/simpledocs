@@ -25,11 +25,7 @@
 
 		<div class="clearfix" id="banner">
 
-			{% if banner %}
-				<h3>{{ banner }}</h3>
-			{% else %}
-				<h3>Documentation</h3>
-			{% endif %}
+			<h3>Documentation</h3>
 
 			{% import 'structure/nav.html' as nav %}
 			{{ nav.main(nav_items) }}
