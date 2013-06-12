@@ -9,45 +9,9 @@
 
 <body class="{{ body_class }}">
 
-	<header class="wrapper">
-
-		<div class="clearfix container" id="header-content">
-
-			<a class="eight columns alpha logo" href="/">Simple Docs<span>Flat-file, markdown powered, documentation</span></a>
-
-			<div class="eight columns omega">
-				{% include "structure/search.html" %}
-			</div>
-
-		</div>
-
-	</header>
-
-	<section class="wrapper" id="wrapper-banner">
-
-		<div class="clearfix container" id="banner">
-
-			<h3 class="eight columns alpha">Documentation</h3>
-
-			<div class="eight columns omega">
-				{% import 'structure/nav.html' as nav %}
-				{{ nav.main(nav_items) }}
-			</div>
-
-		</div>
-
-	</section>
-
 	<section class="wrapper" id="wrapper-main">
 
 		<div class="clearfix container" id="main">
-
-			<div class="four columns" id="container-sidebar">
-				<div id="sidebar">
-					{% include "structure/search.html" %}
-					{{ nav.side(nav_items) }}
-				</div>
-			</div>
 
 			<div class="twelve columns" id="container-content">
 				<div id="content">
@@ -57,28 +21,15 @@
 				</div>
 			</div>
 
-		</div>
+			<div class="four columns" id="container-sidebar">
+				<div id="sidebar">
+					{% include "structure/search.html" %}
+					{% import 'structure/nav.html' as nav %}
+					{{ nav.main(nav_items) }}
+					{{ nav.side(nav_items) }}
+				</div>
+			</div>
 
-	</section>
-
-	<section id="footer-banner">
-
-		<div class="container clearfix" id="footer-banner-content">
-			<ul class="four columns">
-				<li class="title">Title One</li>
-				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
-				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
-			</ul>
-			<ul class="four columns">
-				<li class="title">Title Two</li>
-				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
-				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
-			</ul>
-			<ul class="four columns">
-				<li class="title">Title Three</li>
-				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
-				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
-			</ul>
 		</div>
 
 	</section>
@@ -87,6 +38,7 @@
 
 		<div class="container" id="footer-content">
 			<div class="sixteen columns alpha omega">
+				<a class="eight columns alpha logo" href="/">Simple Docs<span>Flat-file, markdown powered, documentation</span></a>
 				Design by <a href="http://www.blazrobar.com">Blaz Robar</a> and <a href="https://github.com/simoncoulton">Simon Coulton</a><br/>
 				Code by <a href="http://github.com/chrislaskey">Chris Laskey</a>
 			</div>
