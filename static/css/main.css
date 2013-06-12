@@ -78,20 +78,19 @@ input:focus{
 /* Structure */
 
 .wrapper {
-	width:100%;
+	width: 100%;
 }
 
 header {
 	background: #232e34;
 }
 
-	header #header-content{
+	header #header-content {
 		margin: 0px auto;
-		padding:20px 0px;
-		width: 940px;
+		padding: 20px 0px;
 	}
 
-#wrapper-banner{
+#wrapper-banner {
 	background: #3298cb;
 	border-bottom: 1px solid #068fd4;
 	border-top: 1px solid #099ae3;
@@ -104,32 +103,30 @@ header {
 		margin: 0px auto;
 		padding: 34px 0;
 		text-shadow: 0 1px #0881bd;
-		width: 940px;
 	}
 
-#wrapper-main{
-	background:#f8f8f8;
-	padding:40px 0px;
+#wrapper-main {
+	background: #f8f8f8;
+	padding: 40px 0px;
 }
 
 	#main {
 		background: #fff;
 		box-shadow: 0 0 6px rgba(0, 0, 0, 0.10);
-		margin:0px auto;
-		width:940px;
+		margin: 0px auto;
 	}
 
 		#sidebar {
-			border-right:1px solid #f2f2f2;
+			border-right: 1px solid #f2f2f2;
 			float: left;
-			min-height: 100%;
-			width: 259px;
+			margin: 3%;
+			width: 94%;
 		}
 
 		#content {
 			float: left;
-			padding:20px 20px 20px 20px;
-			width: 640px;
+			margin: 3%;
+			width: 94%;
 		}
 
 #footer-banner {
@@ -137,20 +134,18 @@ header {
 	padding: 40px 0px;
 }
 
-	#footer-banner-content{
+	#footer-banner-content {
 		color: #9fb9c7;
-		margin:0px auto;
-		width:940px;
+		margin: 0px auto;
 	}
 
 footer {
 	padding: 40px 0px;
 }
 
-	#footer-content{
+	#footer-content {
 		color: #333f46;
-		margin:0px auto;
-		width:940px;
+		margin: 0px auto;
 	}
 
 /* Header content */
@@ -266,7 +261,6 @@ form.search {
 #sidebar nav {
 	background: -webkit-linear-gradient(left, #fff 0%, #fff 20%, #fff 80%, #f6f6f6 100%);
 	background: linear-gradient(to right, #fff 0%, #fff 20%, #fff 80%, #f6f6f6 100%);
-	padding:20px 0px;
 }
 
 	#sidebar nav ul {

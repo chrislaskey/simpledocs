@@ -11,11 +11,13 @@
 
 	<header class="wrapper">
 
-		<div class="clearfix" id="header-content">
+		<div class="clearfix container" id="header-content">
 
-			<a class="logo" href="/">Simple Docs<span>Flat-file, markdown powered, documentation</span></a>
+			<a class="eight columns alpha logo" href="/">Simple Docs<span>Flat-file, markdown powered, documentation</span></a>
 
-			{% include "structure/search.html" %}
+			<div class="eight columns omega">
+				{% include "structure/search.html" %}
+			</div>
 
 		</div>
 
@@ -23,12 +25,14 @@
 
 	<section class="wrapper" id="wrapper-banner">
 
-		<div class="clearfix" id="banner">
+		<div class="clearfix container" id="banner">
 
-			<h3>Documentation</h3>
+			<h3 class="eight columns alpha">Documentation</h3>
 
-			{% import 'structure/nav.html' as nav %}
-			{{ nav.main(nav_items) }}
+			<div class="eight columns omega">
+				{% import 'structure/nav.html' as nav %}
+				{{ nav.main(nav_items) }}
+			</div>
 
 		</div>
 
@@ -36,16 +40,21 @@
 
 	<section class="wrapper" id="wrapper-main">
 
-		<div class="clearfix" id="main">
+		<div class="clearfix container" id="main">
 
-			<div id="sidebar">
-				{{ nav.side(nav_items) }}
+			<div class="four columns" id="container-sidebar">
+				<div id="sidebar">
+					{% include "structure/search.html" %}
+					{{ nav.side(nav_items) }}
+				</div>
 			</div>
 
-			<div id="content">
-				{% block content %}
-					{{ content|safe }}
-				{% endblock %}
+			<div class="twelve columns" id="container-content">
+				<div id="content">
+					{% block content %}
+						{{ content|safe }}
+					{% endblock %}
+				</div>
 			</div>
 
 		</div>
@@ -54,18 +63,18 @@
 
 	<section id="footer-banner">
 
-		<div class="clearfix" id="footer-banner-content">
-			<ul>
+		<div class="container clearfix" id="footer-banner-content">
+			<ul class="four columns">
 				<li class="title">Title One</li>
 				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
 				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
 			</ul>
-			<ul>
+			<ul class="four columns">
 				<li class="title">Title Two</li>
 				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
 				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
 			</ul>
-			<ul>
+			<ul class="four columns">
 				<li class="title">Title Three</li>
 				<li><a href="http://docs.python.org/3/">Python 3 Documentation</a></li>
 				<li><a href="http://www.reddit.com/r/python">Python Subreddit</a></li>
@@ -76,9 +85,11 @@
 
 	<footer class="wrapper">
 
-		<div id="footer-content">
-			Design by <a href="http://www.blazrobar.com">Blaz Robar</a> and <a href="https://github.com/simoncoulton">Simon Coulton</a><br/>
-			Code by <a href="http://github.com/chrislaskey">Chris Laskey</a>
+		<div class="container" id="footer-content">
+			<div class="sixteen columns alpha omega">
+				Design by <a href="http://www.blazrobar.com">Blaz Robar</a> and <a href="https://github.com/simoncoulton">Simon Coulton</a><br/>
+				Code by <a href="http://github.com/chrislaskey">Chris Laskey</a>
+			</div>
 		</div>
 
 	</footer>
