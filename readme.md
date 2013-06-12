@@ -43,8 +43,10 @@ colleagues.
 Taking compiled flat-file systems as a jumping off point, my goals were to:
 
 - Write notes in Markdown files and have the file system mirrored online
-- No special overhead to managing user permissions, allowing colleagues - only the right colleagues - the ability to modify or add files.
+- No special overhead to managing user permissions, allowing colleagues - only
+the right colleagues - the ability to modify or add files.
 - Searchable documentation with weighted results.
+- Responsive design for remote mobile phone access as well as desktop access.
 - Piggy-back on known, solid technology instead of re-inventing it all in the
 browser.
 - Requires no management after initial setup.
