@@ -1,0 +1,145 @@
+/* " */
+/* Fonts */
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Open Sans Light'), local('OpenSans-Light'),
+		 url('../fonts/OpenSans-Light.woff') format('woff'),
+		 url('../fonts/OpenSans-Light.ttf')  format('truetype');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+		 url('../fonts/OpenSans-Regular.woff') format('woff'),
+		 url('../fonts/OpenSans-Regular.ttf')  format('truetype');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
+		 url('../fonts/OpenSans-Semibold.woff') format('woff'),
+		 url('../fonts/OpenSans-Semibold.ttf')  format('truetype');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Open Sans Bold'), local('OpenSans-Bold'),
+		 url('../fonts/OpenSans-Bold.woff') format('woff'),
+		 url('../fonts/OpenSans-Bold.ttf')  format('truetype');
+}
+
+
+/* Universals */
+
+html, body {
+	background: #fff;
+	color: #4a4a4a;
+	font-family: 'Open Sans', sans-serif;
+	font-smooth: always;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2{
+	margin: 1em 0px;
+}
+
+h3, h4, h5, h6{
+	margin: 1.5em 0px;
+}
+
+form,
+input{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+input:focus{
+	outline: none;
+}
+
+
+/* Structure */
+
+.wrapper {
+	width: 100%;
+}
+
+#wrapper-banner {
+	background: #181818;
+	height: 500px;
+}
+
+	#banner {
+		color: #fff;
+		margin: 0px auto;
+		padding-top: 120px;
+	}
+
+#wrapper-features {
+	background: #f2f2f2;
+}
+
+	#features {
+
+	}
+
+/* Banner Content */
+
+#banner h1 {
+	font: 600 30px/30px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
+	margin: 0px 0px 40px 0px;
+	padding: 0px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+}
+
+#banner h2 {
+	font: 600 20px/20px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
+	margin: 0px 0px 20px 0px;
+	padding: 0px;
+}
+
+#banner p.subtext {
+	font: 300 20px/1.3em 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
+	margin: 0px 0px 40px 0px;
+	padding: 0px;
+}
+
+#banner p.actions {
+	margin: 0px;
+	padding: 0px;
+}
+
+	#banner a.download-button {
+		background: #da3958;
+		border-radius: 3px;
+		color: #fff;
+		display: inline-block;
+		font: 700 14px/14px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
+		letter-spacing: 2px;
+		margin: 0px 14px 0px 0px;
+		padding: 18px 24px;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+		#banner a.download-button:hover {
+			background: #c92847;
+		}
+
+	#banner a.repo{
+		border-bottom: 1px solid #bbb;
+		color: #ddd;
+		display: inline-block;
+		font: 400 16px/16px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
+		padding: 0px 0px 1px 0px;
+		text-decoration: none;
+	}
