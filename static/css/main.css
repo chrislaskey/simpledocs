@@ -38,7 +38,7 @@
 /* Universals */
 
 html, body {
-	background: #fff;
+	background: #f2f2f2;
 	color: #4a4a4a;
 	font-family: 'Open Sans', sans-serif;
 	font-smooth: always;
@@ -50,6 +50,10 @@ html, body {
 h1, h2{
 	margin: 1em 0px;
 }
+
+	h1 {
+		margin-top:0px;
+	}
 
 h3, h4, h5, h6{
 	margin: 1.5em 0px;
@@ -73,15 +77,22 @@ input:focus{
 }
 
 #wrapper-banner {
-	background: #181818;
+	background: #000 url('../images/banner-code.gif') 70% 0% no-repeat;
 	height: 500px;
 }
 
 	#banner {
 		color: #fff;
 		margin: 0px auto;
-		padding-top: 120px;
 	}
+
+		#container-banner {
+			background: rgba(0,0,0,0.8);
+			border-radius: 3px;
+			height: 380px;
+			margin-left: -20px;
+			padding: 120px 20px 0px 20px;
+		}
 
 #wrapper-features {
 	background: #f2f2f2;
@@ -91,13 +102,24 @@ input:focus{
 
 	}
 
+#wrapper-setup {
+	background: #fff;
+	padding: 30px 0px;
+	
+	display: none;
+}
+
+	#setup {
+
+	}
+
 /* Banner Content */
 
 #banner h1 {
 	font: 600 30px/30px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
 	margin: 0px 0px 40px 0px;
 	padding: 0px;
-	letter-spacing: 4px;
+	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 
@@ -142,4 +164,17 @@ input:focus{
 		font: 400 16px/16px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
 		padding: 0px 0px 1px 0px;
 		text-decoration: none;
+	}
+
+/* Features Content */
+
+#features p{
+	font: 400 14px/22px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
+	padding: 2em 0px;
+}
+
+	#features p strong:first-child{
+		font: 700 15px/22px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
 	}
