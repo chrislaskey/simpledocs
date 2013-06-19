@@ -39,7 +39,7 @@
 
 html, body {
 	background: #f2f2f2;
-	color: #4a4a4a;
+	color: #333;
 	font-family: 'Open Sans', sans-serif;
 	font-smooth: always;
 	margin: 0;
@@ -77,25 +77,21 @@ input:focus{
 }
 
 #wrapper-banner {
-	background: #000 url('../images/banner-code.gif') 70% 0% no-repeat;
-	height: 500px;
+	background: #fff;
 }
 
 	#banner {
-		color: #fff;
 		margin: 0px auto;
 	}
 
 		#container-banner {
-			background: rgba(0,0,0,0.8);
-			border-radius: 3px;
-			height: 380px;
-			margin-left: -20px;
-			padding: 120px 20px 0px 20px;
+			border-radius: 5px;
+			margin: 40px 0px 0px -20px;
+			padding: 20px 20px 20px 20px;
 		}
 
 #wrapper-features {
-	background: #f2f2f2;
+	background: #eee;
 }
 
 	#features {
@@ -105,7 +101,7 @@ input:focus{
 #wrapper-setup {
 	background: #fff;
 	padding: 30px 0px;
-	
+
 	display: none;
 }
 
@@ -158,8 +154,8 @@ input:focus{
 		}
 
 	#banner a.repo{
-		border-bottom: 1px solid #bbb;
-		color: #ddd;
+		border-bottom: 1px solid #888;
+		color: #181818;
 		display: inline-block;
 		font: 400 16px/16px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
 		padding: 0px 0px 1px 0px;
@@ -169,8 +165,8 @@ input:focus{
 /* Features Content */
 
 #features p{
-	font: 400 14px/22px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
-	padding: 2em 0px;
+	font: 400 15px/22px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
+	padding: 1.5em 0px;
 }
 
 	#features p strong:first-child{
