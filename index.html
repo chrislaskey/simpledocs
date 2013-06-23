@@ -99,41 +99,58 @@ $ ln -s your_docs_directory ./docs</pre>
 
 	</section>
 
-	<section class="wrapper" id="wrapper-about">
+	<section class="wrapper" id="wrapper-faq">
 
-		<div class="clearfix container" id="about">
+		<div class="clearfix container" id="faq">
 
-			<div class="sixteen columns alpha omega" id="container-about">
-				<!-- <img alt="Example of layout" src="static/images/responsive.png" style="float:right" width="500"/> -->
-				<h1>Setup</h1>
- 				<p>Write plain-text documentation right from the command line.</p>
- 				<p>No context switching to log into wiki's. No compilation to forget. No caches to clear.</p>
-				<p>Setup requires Python 2.6+, a webserver, and creating a symlink.</p>
+			<div class="sixteen columns alpha omega" id="container-faq">
 
+				<h1>FAQ</h1>
 
-				<h1>Motivation</h1>
+				<dl>
+					<dt>What are some of the use cases for Simple Docs?</dt>
+					<dd>Simple Docs is great for capturing all the information that usually falls between the cracks. At work I use it to collaboratively keep notes about our evolving systems architecture. Personally I use it to organize programming, systems, and design notes from over the years.</dd>
+				</dl>
 
-				<p>Ever have bits of information saved across your computer? A list of potential dog names, articles to read, or directions on how to set up a new webserver.</p>
+				<dl>
+					<dt>What platforms can Simple Docs run on?</dt>
+					<dd>The application requires <code>Python +2.6</code>, <code>Python PIP</code> and a web server. The search functionality requires <code>grep</code> <code>ls</code> and <code>find</code>. The application has been tested in <code>Debian</code> and <code>RHEL</code> Linux distributions. Though not tested, there should be nothing to prevent it from running on <code>Mac OS X</code>, <code>Solaris</code> or <code>FreeBSD</code>.</dd>
+				</dl>
 
-				<p>I do. My computer is like a modern day office desk filled with various sticky notes scattered all over the place. But instead of actual sticky notes, I use text files. Lots of text files. So many I lose track of where they are!</p>
+				<dl>
+					<dt>How complex is Simple Docs under the hood?</dt>
+					<dd>Simple Docs extends the idea of simplicity to the technical stack. Instead of creating menus and content hiearchies, what the file system is directly mirrored. Instead of creating separate website users and permissions, existing Unix user and group permissions are used. Search online using the same tools as the command line.</dd>
+				</dl>
 
-				<p>I wrote Simple Docs to get a better grip on this. Though the type of data I store in these files is very varied, the format is the same - it's all just text: headings, sentences, and paragraphs.</p>
-				
-				<p>Simple Docs gives me one central location to store this information and mirrors all these files on a website, in an easily readible format that's mobile friendly, searchable, and navigable.</p>
+				<dl>
+					<dt>What's the recommended web server?</dt>
+					<dd>The best advice is to use what is familiar. <code>Apache + Mod_WSGI</code> is the most common, though <code>Nginx + uWSGI</code> and <code>Nginx + gunicorn</code> are becoming increasingly popular python web stacks.</dd>
+				</dl>
 
-				<h2>Technical Details</h2>
+				<dl>
+					<dt>Are symlinks allowed for the <code>./docs</code> directory?</dt>
+					<dd>Not only are they allowed, they are encouraged as standard practice. This allows docs to remain in their current fixed location, or fixed locations.</dd>
+				</dl>
 
-				<p>When building the tool I kept this idea of simplicity going.</p>
+				<dl>
+					<dt>How do I restrict viewing access?</dt>
+					<dd>A core tenant of Simple Docs is to rely on systems that already exist. Permissions can be handled using ip filtering or web server authorization. The former can be handled directly with <code>iptables</code> rules. Most web servers support both ip filtering and simple authorization schemes.</dd>
+				</dl>
 
-				<p>Websites can do incredible things these days, which is great! But it also means sometimes these sites require a lot of knowledge specific to a particular website. How do I create a new user in WordPress again? Oh wait, who can see my Facebook posts?</p>
+				<dl>
+					<dt>How do I manage write access?</dt>
+					<dd>A core tenant of Simple Docs is to rely on systems that already exist. Simple Docs relies on file system user/group file permissions.</dd>
+				</dl>
 
-				<p>Most of the time this is easy to remember. But sometimes I forget. And every time I do I feel like I'm wasting time, or worse, I feel dumb.</p>
+				<dl>
+					<dt>How does the weighted search work?</dt>
+					<dd>Search terms are filtered into individual search words, composed of only letters and numbers. Each term is then searched against filenames and file contents. Filename matches carry more weight than a file content match.</dd>
+				</dl>
 
-				<p>A lot of this complexity is reproducing functionality that already exists on computers. I'm a programmer by trade, so I know computers really well. I knew there's already user accounts, passwords, navigation tools, privacy controls, and search functionalities. What if instead of building all of these things again on the web, I built on top of what already exists, what I already know.</p>
-
-				<p>Simple docs aims to do just that, make things simple. Easy to setup, with almost no upkeep required. Edit old documentation and write new ones with the same tools I do now. Built on well known tools so everything is easy to remember from searching, to navigating, to privacy controls.</p>
-
-				<p>It helped me get a handle on those little, but often times important, pieces of information I kept letting fall through the cracks. Hope it can help you too!</p>
+				<dl>
+					<dt>What is the license?</dt>
+					<dd>The project is released under the a four-clause MIT license. See the <a href="https://github.com/chrislaskey/simple-docs/blob/github/license.txt">included license.txt</a> for details and commentary on license choice.</dd>
+				</dl>
 
 			</div>
 
