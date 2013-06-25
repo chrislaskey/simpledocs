@@ -42,11 +42,20 @@
 
 			<div class="sixteen columns alpha omega" id="container-features">
 
-				<p class="column one-third alpha"><strong>simplifies documentation</strong><br/><br/>Write in plain text or Markdown. Mirrors the filesystem hierarchy. Write straight from the command-line</p>
+				<div class="feature column one-third alpha">
+					<h4>Simplifies Documentation</h4>
+					<p>Write in plain text or Markdown. Mirrors the filesystem hierarchy. Write straight from the command-line</p>
+				</div>
 
-				<p class="column one-third"><strong>smart features</strong><br/><br/>Search filenames and content and return weighted results. Responsive design for reading docs on the move.</p>
+				<div class="feature column one-third">
+					<h4>Smart Features</h4>
+					<p>Search filenames and content and return weighted results. Responsive design for reading docs on the move.</p>
+				</div>
 
-				<p class="column one-third omega"><strong>familiar linux toolchain</strong><br/><br/>Manage write access using Linux user permissions. Manage read access with webserver config files.</p>
+				<div class="feature column one-third omega">
+					<h4>Familiar Toolchain</h4>
+					<p>Manage write access using Linux user permissions. Manage read access with webserver config files.</p>
+				</div>
 
 			</div>
 
@@ -60,7 +69,7 @@
 
 			<div class="sixteen columns alpha omega" id="container-about">
 
-				<h1>Motivation</h1>
+				<h1>Why Simple Docs?</h1>
 
 				<p>Ever thought "I should write this down" while working and end up not doing it? I did.</p>
 				
@@ -91,7 +100,7 @@ $ cd project_directory
 $ ./setup.sh
 $ ln -s your_docs_directory ./docs</pre>
 
-				<p>The last step is setting up the webserver. Simple Docs uses <a class="code" href="#"><code>Python Flask</code></a> under the hood any of the <a href="http://flask.pocoo.org/docs/deploying/">Flask deployment options</a> will work.</p>
+				<p>The last step is setting up the webserver. Simple Docs uses <a class="code" href="#"><code>Python Flask</code></a> under the hood any of the Flask web server <a href="http://flask.pocoo.org/docs/deploying/">deployment options</a> will work.</p>
 
 			</div>
 
@@ -114,7 +123,7 @@ $ ln -s your_docs_directory ./docs</pre>
 
 				<dl>
 					<dt>What platforms can Simple Docs run on?</dt>
-					<dd>The application requires <code>Python +2.6</code>, <code>Python PIP</code> and a web server. The search functionality requires <code>grep</code> <code>ls</code> and <code>find</code>. The application has been tested in <code>Debian</code> and <code>RHEL</code> Linux distributions. Though not tested, there should be nothing to prevent it from running on <code>Mac OS X</code>, <code>Solaris</code> or <code>FreeBSD</code>.</dd>
+					<dd>The application requires <code>Python +2.6</code>, <code>Python PIP</code> and a web server. The search functionality requires <code>grep</code>, <code>ls</code> and <code>find</code>. The application has been tested in <code>Debian</code> and <code>RHEL</code> Linux distributions. Though not tested, there should be nothing to prevent it from running on <code>Mac OS X</code>, <code>Solaris</code> or <code>FreeBSD</code>.</dd>
 				</dl>
 
 				<dl>
