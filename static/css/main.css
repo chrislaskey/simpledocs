@@ -130,10 +130,6 @@ a {
 		}
 
 #wrapper-features {
-	background: #f2f2f2;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
-
 	background: #282828;
 	border-bottom: 12px solid #333;
 	border-top: 12px solid #333;
@@ -172,6 +168,13 @@ a {
 
 	}
 
+#wrapper-download {
+	background: #282828;
+	border-bottom: 12px solid #333;
+	border-top: 12px solid #333;
+	color: #fff;
+	padding: 60px 0px;
+}
 
 /* Banner Content */
 
@@ -199,7 +202,7 @@ a {
 	padding: 0px;
 }
 
-	#banner a.download-button {
+	a.download-button {
 		background: #da3958;
 		border-radius: 3px;
 		color: #fff;
@@ -212,11 +215,11 @@ a {
 		text-transform: uppercase;
 	}
 
-		#banner a.download-button:hover {
+		a.download-button:hover {
 			background: #c92847;
 		}
 
-	#banner a.repo{
+	a.repo{
 		border-bottom: 1px solid #888;
 		color: #181818;
 		display: inline-block;
@@ -224,6 +227,14 @@ a {
 		padding: 0px 0px 1px 0px;
 		text-decoration: none;
 	}
+
+#banner img {
+	float:right;
+	height: auto;
+	margin-right: 0px;
+	max-width: 100%;
+	width: 500px;
+}
 
 
 /* Features Content */
@@ -260,3 +271,40 @@ div.feature{
 		margin: 0px;
 		padding: 0px 0px 0px 0px;
 	}
+
+
+/* Download Content */
+
+#download {
+
+}
+
+	#download a.repo{
+		color: #fff;
+	}
+
+/* Mobile styles */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+	#banner {
+		padding-top: 0px;
+	}
+	
+		#banner-image {
+			margin-top: 90px;
+		}
+
+}
+
+@media only screen and (min-width: 240px) and (max-width: 767px) {
+
+	#banner {
+		padding-top: 0px;
+	}
+
+	#download a.download-button {
+		margin-bottom:20px;
+	}
+
+}
