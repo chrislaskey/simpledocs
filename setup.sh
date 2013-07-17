@@ -4,13 +4,13 @@
 # installing setting up a virtualenv and importing requirements.txt into pip.
 # Can be run multiple times, it is written to be idempotent.
 #
-# Version 1.1.1
+# Version 1.2.1
 
 this_file=`basename "$0"`
 required_minimum_python_version_major=''
 required_minimum_python_version_minor=''
 required_minimum_python_version_minor_minor=''
-project_virtualenv_path=".venv" 
+project_virtualenv_path="/vagrant/django/.venv" 
 environment_json_file="./environment.json"
 
 # option_force=
@@ -128,11 +128,16 @@ create_json_file_with_environment_information () {
 	# python version in the path, e.g. ".venv/lib/python2.7/site-packages/".
 	site_packages_path=`${project_virtualenv_path}/bin/python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"`
 	site_packages_dir=`echo ${site_packages_path} | sed -e "s#$(pwd)/##"`
+
+	# virtualenv path may be relative, this makes sure the path is absolute.
+	original_pwd=`pwd`
+	project_virtualenv_abspath=`cd ${project_virtualenv_path}; pwd`
+	cd "$original_pwd"
 	
 	env_data="{"
 	env_data="${env_data} \"base_path\": \"`pwd`\", "
 	env_data="${env_data} \"virtualenv_dir\": \"${project_virtualenv_path}\", "
-	env_data="${env_data} \"virtualenv_path\": \"`pwd`/${project_virtualenv_path}\", "
+	env_data="${env_data} \"virtualenv_path\": \"${project_virtualenv_abspath}\", "
 	env_data="${env_data} \"site_packages_dir\": \"${site_packages_dir}\", "
 	env_data="${env_data} \"site_packages_path\": \"${site_packages_path}\" "
 	env_data="${env_data} }"
