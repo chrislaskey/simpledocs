@@ -4,25 +4,19 @@
 # installing setting up a virtualenv and importing requirements.txt into pip.
 # Can be run multiple times, it is written to be idempotent.
 #
-# Version 1.2.1
+# Version 1.5.2
 
 this_file=`basename "$0"`
+this_path=`cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd`
+this_dir=`basename "$this_path"`
+
+project_name="${this_dir}"
 required_minimum_python_version_major=''
 required_minimum_python_version_minor=''
 required_minimum_python_version_minor_minor=''
-project_virtualenv_path="/vagrant/django/.venv" 
-environment_json_file="./environment.json"
-
-# option_force=
-# parse_options () {
-# 	while getopts "f" opt; do
-# 		case $opt in
-# 			f)
-# 				option_force="true"
-# 				;;
-# 		esac
-# 	done
-# } ; parse_options $@
+virtualenvs_dir="/usr/lib/virtualenvs"
+project_virtualenv_path="${virtualenvs_dir}/${project_name}" 
+individual_setup_files_dir="./setup"
 
 set -o nounset
 set -o errtrace
@@ -82,13 +76,23 @@ verify_python_version () {
 	fi
 }
 
-install_virtualenv_package_if_needed () {
+verify_virtualenv_binary_installed () {
 	if ! which virtualenv 1>/dev/null; then
 		error "Required python package virtualenv not installed."
 	fi
 }
 
-create_virtualenv_if_needed () {
+create_system_virtualenvs_dir_if_needed () {
+	if [[ -d "$virtualenvs_dir" ]]; then
+		return 0
+	fi
+
+	if ! mkdir "$virtualenvs_dir"; then
+		error "Could not create common virtualenv dir, 'mkdir ${$virtualenvs_dir}'."
+	fi
+}
+
+create_project_virtualenv_if_needed () {
 	if [[ -d "$project_virtualenv_path" ]]; then
 		return 0
 	fi
@@ -112,42 +116,21 @@ install_pip_packages_into_virtualenv_if_requires_file () {
 	fi
 }
 
-create_json_file_with_environment_information () {
-	if [[ -f "${environment_json_file}" ]]; then
-		if ! rm "${environment_json_file}"; then
-			error "Could not remove environment JSON file, '${environment_json_file}'."
-		fi
+execute_individual_setup_files () {
+	if [[ ! -d "${individual_setup_files_dir}" ]]; then
+		return 0
 	fi
 
-	if ! touch "${environment_json_file}"; then
-		error "Could not create environment JSON file, 'touch ${environment_json_file}'."
-	fi
-
-	# Use the virtualenv python binary to export the virtualevn site-packages
-	# directory, which is not a standard location as it includes the specific
-	# python version in the path, e.g. ".venv/lib/python2.7/site-packages/".
-	site_packages_path=`${project_virtualenv_path}/bin/python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"`
-	site_packages_dir=`echo ${site_packages_path} | sed -e "s#$(pwd)/##"`
-
-	# virtualenv path may be relative, this makes sure the path is absolute.
-	original_pwd=`pwd`
-	project_virtualenv_abspath=`cd ${project_virtualenv_path}; pwd`
-	cd "$original_pwd"
-	
-	env_data="{"
-	env_data="${env_data} \"base_path\": \"`pwd`\", "
-	env_data="${env_data} \"virtualenv_dir\": \"${project_virtualenv_path}\", "
-	env_data="${env_data} \"virtualenv_path\": \"${project_virtualenv_abspath}\", "
-	env_data="${env_data} \"site_packages_dir\": \"${site_packages_dir}\", "
-	env_data="${env_data} \"site_packages_path\": \"${site_packages_path}\" "
-	env_data="${env_data} }"
-
-	# Use python -mjson to pretty print JSON into file
-	echo ${env_data} | python -mjson.tool > ${environment_json_file}
+	find "`pwd`/${individual_setup_files_dir}" -maxdepth 1 -type f | while read filename; do
+		source "${filename}"
+	done
 }
 
+# Application execution
+
 verify_python_version
-install_virtualenv_package_if_needed
-create_virtualenv_if_needed
+verify_virtualenv_binary_installed
+create_system_virtualenvs_dir_if_needed
+create_project_virtualenv_if_needed
 install_pip_packages_into_virtualenv_if_requires_file
-create_json_file_with_environment_information
+execute_individual_setup_files
