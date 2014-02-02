@@ -1,14 +1,5 @@
 # -*- coding: utf8 -*-
 
-# nosetests --with-coverage --cover-package=<package> \
-# --nocapture ./tests
-
-import os
-from lib.environment import Environment
-base_dir = '{0}/../../'.format(__file__)
-abs_base_dir = os.path.abspath(base_dir)
-Environment().add_virtualenv_site_packages_to_path(abs_base_dir)
-
 from nose.tools import *
 from lib.requestparser import RequestParser
 
