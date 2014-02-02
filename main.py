@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-
-from lib.environment import Environment
-Environment().add_virtualenv_site_packages_to_path(__file__)
+#!/usr/lib/virtualenvs/simple-docs/bin/python
 
 from flask import Flask, abort, request, redirect, url_for, render_template, g
 from lib.contentloader import ContentLoader
