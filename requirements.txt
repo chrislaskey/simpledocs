@@ -1,3 +1,5 @@
 Flask
 Markdown
 webassets
+nose
+coverage
