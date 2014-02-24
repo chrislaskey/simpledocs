@@ -3,7 +3,7 @@ About Simple Docs
 
 **Simplifying documentation**
 
-Version 1.0.0
+Version 1.0.1
 
 Mirror plain text files effortlessly. No compilation. No caches to clear. A
 real time mirror of files. Perfect for individuals or small teams who need to
@@ -55,6 +55,17 @@ The result is Simple Docs. Built on top of Python Flask. Easy to setup, no
 additional maintenance required.
 
 Finally I'm able to stop managing documentation and get back to writing it.
+
+Deploying
+================================================================================
+
+Simple Docs uses [Python Flask](http://flask.pocoo.org/) to serve files. The
+`python main.py` command runs a simple web server for development use only. For
+production you'll want to put a dedicated web server in front of it like
+Apache, Nginx, or Gunicorn.
+
+See the official Flask documentation for details:
+[flask.pocoo.org/docs/deploying](http://flask.pocoo.org/docs/deploying/).
 
 License
 ================================================================================
