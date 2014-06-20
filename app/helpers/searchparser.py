@@ -1,7 +1,7 @@
 import os.path
 from collections import defaultdict
 
-from lib.commandline import CommandLine
+from .. lib.commandline import CommandLine
 from . searchtermparser import SearchTermFilter
 
 

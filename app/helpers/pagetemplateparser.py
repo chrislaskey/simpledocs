@@ -1,4 +1,4 @@
-from lib.templateparser import TemplateVariableParser
+from .. lib.templateparser import TemplateVariableParser
 from . navigationcreator import NavigationCreator
 
 
