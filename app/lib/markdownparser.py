@@ -1,5 +1,6 @@
 from markdown import markdown
 
+
 class MarkdownParser:
 
     def __init__(self, custom_options=None):

@@ -4,11 +4,7 @@ from .. lib.markdownparser import MarkdownParser
 from .. helpers.pageprocessing import common_page_processing
 from .. helpers.searchparser import SearchParser
 from .. helpers.searchtermparser import SearchTermParser
-
-# from .. import app
-# from . search import search, parse_search_terms
-# from . page import page
-# from . errors import not_found, server_error
+from .. import app
 
 
 @app.route('/parse-search-terms', methods = ['post'])

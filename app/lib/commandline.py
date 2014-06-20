@@ -1,5 +1,6 @@
 import subprocess
 
+
 class CommandLine:
 
     def execute(self, command, stdin=None, stdout=None, stderr=None,

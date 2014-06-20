@@ -1,6 +1,7 @@
 import codecs
 import os.path
 
+
 class ContentLoader:
 
     def load(self, file_path):

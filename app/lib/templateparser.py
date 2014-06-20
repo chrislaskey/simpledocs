@@ -1,6 +1,8 @@
 import re
 from unicodedata import normalize
-from lib.requestparser import RequestParser
+
+from . requestparser import RequestParser
+
 
 class TemplateVariableParser:
 
