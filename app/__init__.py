@@ -1,9 +1,9 @@
 from flask import Flask, abort, request, redirect, url_for, render_template, g
 from lib.contentloader import ContentLoader
 from lib.markdownparser import MarkdownParser
-from helper.pageprocessing import common_page_processing
-from helper.searchparser import SearchParser
-from helper.searchtermparser import SearchTermParser
+from helpers.pageprocessing import common_page_processing
+from helpers.searchparser import SearchParser
+from helpers.searchtermparser import SearchTermParser
 
 
 app = Flask(__name__)
