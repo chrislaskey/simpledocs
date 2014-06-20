@@ -1,8 +1,14 @@
-virtualenv_site_packages = '/usr/lib/virtualenvs/simpledocs/lib/python2.7/site-packages/'
+virtualenv_site_packages = [
+    '/usr/lib/virtualenvs/simpledocs/lib/python2.6/site-packages/',
+    '/usr/lib/virtualenvs/simpledocs/lib/python2.7/site-packages/'
+]
 
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-sys.path.insert(0, virtualenv_site_packages)
+
+for package_path in virtualenv_site_packages:
+    if os.path.isdir(package_path):
+        sys.path.insert(0, package_path)
 
 from app import app as application
 
