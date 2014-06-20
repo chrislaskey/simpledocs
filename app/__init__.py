@@ -7,6 +7,7 @@ from helpers.searchtermparser import SearchTermParser
 
 
 app = Flask(__name__)
+app.config.from_object('app.config')
 
 
 @app.route('/parse-search-terms', methods = ['post'])
