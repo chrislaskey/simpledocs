@@ -1,5 +1,6 @@
 from lib.templateparser import TemplateVariableParser
-from application.navigationcreator import NavigationCreator
+from . navigationcreator import NavigationCreator
+
 
 class PageTemplateVariableParser:
 

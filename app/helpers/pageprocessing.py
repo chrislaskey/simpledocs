@@ -1,7 +1,12 @@
 from flask import g, request
-from application.pagetemplateparser import PageTemplateVariableParser
+
+from . pagetemplateparser import PageTemplateVariableParser
+
 
 def common_page_processing():
-    additional_data = {'documents_directory': 'docs'}
+    additional_data = {
+        'documents_directory': 'docs'
+    }
+
     g.templatevars = PageTemplateVariableParser().parse(request,
-                                                        additional_data)
+        additional_data)
