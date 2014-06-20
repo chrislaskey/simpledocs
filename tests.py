@@ -1,4 +1,4 @@
-#!/usr/lib/virtualenvs/simple-docs/bin/python
+#!/usr/lib/virtualenvs/simpledocs/bin/python
 
 # Version 0.1.1
 # Updated 2014.02.01
