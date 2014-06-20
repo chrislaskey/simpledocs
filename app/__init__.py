@@ -1,5 +1,3 @@
-#!/usr/lib/virtualenvs/simple-docs/bin/python
-
 from flask import Flask, abort, request, redirect, url_for, render_template, g
 from lib.contentloader import ContentLoader
 from lib.markdownparser import MarkdownParser
@@ -51,8 +49,3 @@ def not_found(error):
 def server_error(error):
     common_page_processing()
     return render_template('errors/500.html', **g.templatevars), 500
-
-
-if __name__ == '__main__':
-    app.debug = True
-    app.run()
