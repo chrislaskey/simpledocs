@@ -1,11 +1,16 @@
 import re
+from .. import app
+
+
+def tokenize(request):
+    return SearchTermParser().get_as_uri(request)
 
 
 class SearchTermParser:
 
     ''' Parses raw search strings into filtered search terms '''
 
-    word_limit = 5
+    word_limit = app.config["SEARCH_TERM_WORD_LIMIT"]
 
     def get_as_uri(self, request):
         search_string = request.form.get('search', '')
@@ -28,5 +33,6 @@ class SearchTermParser:
 class SearchTermFilter:
 
     def filter(self, terms):
-       filtered = [ re.sub('[^a-zA-Z0-9-_]*', '', x) for x in terms if x]
-       return filtered
+        filter = app.config["SEARCH_TERM_CHARACTER_FILTER"]
+        filtered = [ re.sub(filter, '', x) for x in terms if x]
+        return filtered

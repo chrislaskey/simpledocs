@@ -1,9 +1,10 @@
 from .. helpers.searchparser import SearchParser
-from .. helpers.searchtermparser import SearchTermParser
+from . lexer import tokenize
 
 
 def terms(request):
-    return SearchTermParser().get_as_uri(request)
+    terms = tokenize(request)
+    return terms
 
 def results(terms):
     search_parser = SearchParser()
