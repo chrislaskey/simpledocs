@@ -3,8 +3,10 @@ from . lexer import tokenize
 
 
 def terms(request):
-    terms = tokenize(request)
-    return terms
+    search_string = request.form.get('search', '')
+    terms = tokenize(search_string)
+    as_uri = '/'.join(terms)
+    return as_uri
 
 def results(terms):
     search_parser = SearchParser()
