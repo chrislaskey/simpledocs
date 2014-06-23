@@ -10,7 +10,7 @@ from .. import app
 @app.route('/parse-search-terms', methods = ['post'])
 def parse_search_terms():
     search_term_uri = SearchTermParser().get_as_uri(request)
-    redirect_to = '/search' + search_term_uri
+    redirect_to = url_for('search', terms=search_term_uri)
     return redirect(redirect_to)
 
 
