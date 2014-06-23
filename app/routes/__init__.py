@@ -1,4 +1,5 @@
-from flask import abort, request, redirect, url_for, render_template, g
+import os.path
+from flask import request, redirect, url_for, render_template, g
 from .. lib.contentloader import ContentLoader
 from .. lib.markdownparser import MarkdownParser
 from .. helpers.pageprocessing import common_page_processing
@@ -28,12 +29,15 @@ def search(terms):
 def page(path):
     common_page_processing()
 
-    unicode_text = ContentLoader().load(path)
+    loader = ContentLoader()
+    unicode_text = loader.load(path)
     if not unicode_text:
-        unicode_text = ContentLoader().load('readme.md')
+        here = os.path.dirname(__file__)
+        readme = os.path.join(here, 'readme.md')
+        unicode_text = loader.load(readme)
+
     html_content = MarkdownParser().parse(unicode_text)
     g.templatevars['content'] = html_content
-
     return render_template('page.html', **g.templatevars)
 
 
