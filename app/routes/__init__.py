@@ -1,8 +1,10 @@
 from flask import request, redirect, url_for, render_template, g
-from .. helpers.documentloader import get_page_html
+from .. documents import document
 from .. helpers.pageprocessing import common_page_processing
 from .. helpers.searchparser import SearchParser
 from .. helpers.searchtermparser import SearchTermParser
+# from .. nav import navigation
+# from .. search import search_terms, search_results
 from .. import app
 
 
@@ -28,8 +30,7 @@ def search(terms):
 @app.route('/<path:path>')
 def page(path):
     common_page_processing()
-    html_content = get_page_html(path)
-    g.templatevars['content'] = html_content
+    g.templatevars['content'] = document(path)
     return render_template('page.html', **g.templatevars)
 
 
