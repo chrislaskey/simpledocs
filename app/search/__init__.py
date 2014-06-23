@@ -8,6 +8,7 @@ def terms(request):
     as_uri = '/'.join(terms)
     return as_uri
 
+
 def results(terms):
     search_parser = SearchParser()
     results = search_parser.search(terms)
