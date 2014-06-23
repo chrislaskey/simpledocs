@@ -4,8 +4,10 @@ from .. helpers.pageprocessing import common_page_processing
 from .. helpers.searchparser import SearchParser
 from .. helpers.searchtermparser import SearchTermParser
 # from .. nav import navigation
-# from .. search import search_terms, search_results
 from .. import app
+# from .. import search
+# search.terms(request)
+# search.results(terms)
 
 
 @app.route('/parse-search-terms', methods = ['post'])

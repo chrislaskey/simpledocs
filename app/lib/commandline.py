@@ -13,10 +13,10 @@ class CommandLine:
         '''
         # Verify passed arguments
         if not type(command) is list or len(command) == 0:
-            raise Exception('Execute method received invalid command argument. '
-                            'Should receive a list containing each command '
-                            'token as a string. Instead received: '
-                            '"{0}"'.format(command))
+            raise Exception('Execute method received invalid command argument.'
+                            ' Should receive a list containing each command'
+                            ' token as a string. Instead received:'
+                            ' "{0}"'.format(command))
 
         # Setup command
         named_args = { 'stdout':subprocess.PIPE, 'stderr':subprocess.PIPE }
