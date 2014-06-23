@@ -3,26 +3,31 @@ import subprocess
 from collections import defaultdict
 
 
-def search_query(keywords):
-    matches = _SearchResultsParser()._search_for_matches(keywords)
-    success = _search_success(matches)
+def search_query(terms, query_engine_type='command_line'):
+    query_engine = query_engine_factory(query_engine_type)
+    matches = query_engine.search(terms)
+    success = True if matches else False
     results = {
-        'keywords': keywords,
+        'terms': terms,
         'matches': matches,
         'success': success
     }
     return results
 
-def _search_success(matches):
-    return True if matches else False
+
+def query_engine_factory(type):
+    if type == 'command_line':
+        return _CommandLineSearch()
+    else:
+        raise Exception('Uknown search engine {0}'.format(name))
 
 
-class _SearchResultsParser:
+class _CommandLineSearch:
 
     ''' Executes native file system search using Python subprocesses '''
 
-    def _search_for_matches(self, terms):
-        self.cli = CommandLine()
+    def search(self, terms):
+        self.cli = _CommandLine()
         self.results = defaultdict(int)
         for term in terms:
             self._search_file_names(term)
@@ -56,7 +61,7 @@ class _SearchResultsParser:
         return results_list
 
 
-class CommandLine:
+class _CommandLine:
 
     def execute(self, command, stdin=None, stdout=None, stderr=None,
                 return_boolean=False, raise_exception_on_failure=True):
