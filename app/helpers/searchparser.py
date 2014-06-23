@@ -15,6 +15,9 @@ class SearchParser:
         results = { 'terms': terms, 'matches': matches }
         return results
 
+    def is_successful(self, results):
+        return True if results.get('matches') else False
+
     def _get_terms_from_path(self, path):
         words = path.split('/')
         filtered = SearchTermFilter().filter(words)

@@ -19,9 +19,11 @@ def parse_search_terms():
 @app.route('/search/<path:terms>')
 def search(terms):
     common_page_processing()
-    search_results = SearchParser().search(terms)
+    search_parser = SearchParser()
+    search_results = search_parser.search(terms)
+    http_code = 200 if search_parser.is_successful(search_results) else 404
     g.templatevars['search_results'] = search_results
-    return render_template('site/search.html', **g.templatevars)
+    return render_template('site/search.html', **g.templatevars), http_code
 
 
 @app.route('/', defaults={'path': ''})
