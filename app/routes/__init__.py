@@ -1,7 +1,5 @@
 from flask import request, redirect, url_for, render_template, g
-from .. lib.contentloader import ContentLoader
-from .. lib.markdownparser import MarkdownParser
-from .. helpers.errorpages import readme_path
+from .. helpers.content import get_page_html
 from .. helpers.pageprocessing import common_page_processing
 from .. helpers.searchparser import SearchParser
 from .. helpers.searchtermparser import SearchTermParser
@@ -30,13 +28,7 @@ def search(terms):
 @app.route('/<path:path>')
 def page(path):
     common_page_processing()
-
-    loader = ContentLoader()
-    unicode_text = loader.load(path)
-    if not unicode_text:
-        unicode_test = loader.load(readme_path())
-
-    html_content = MarkdownParser().parse(unicode_text)
+    html_content = get_page_html(path)
     g.templatevars['content'] = html_content
     return render_template('page.html', **g.templatevars)
 

@@ -1,4 +1,5 @@
 APPLICATION_ROOT = "/docs"
+DOCUMENTS_DIR = "documents"
 
 DEBUG = False
 TESTING = False
