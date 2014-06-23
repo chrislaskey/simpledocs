@@ -10,7 +10,7 @@ class SearchTermParser:
     def get_as_uri(self, request):
         search_string = request.form.get('search', '')
         terms = self.parse(search_string)
-        uri = '/' + '/'.join(terms)
+        uri = '/'.join(terms)
         return uri
 
     def parse(self, search_string):
