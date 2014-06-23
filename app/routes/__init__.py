@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template, g
-from .. helpers.content import get_page_html
+from .. helpers.documentloader import get_page_html
 from .. helpers.pageprocessing import common_page_processing
 from .. helpers.searchparser import SearchParser
 from .. helpers.searchtermparser import SearchTermParser

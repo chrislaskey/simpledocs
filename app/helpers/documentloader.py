@@ -4,12 +4,12 @@ from .. lib.markdownparser import MarkdownParser
 
 
 def get_page_html(path):
-    unicode_text = _get_page_or_default_text(path)
+    unicode_text = _get_page_or_readme_or_default_text(path)
     html_content = MarkdownParser().parse(unicode_text)
     return html_content
 
 
-def _get_page_or_default_text(path):
+def _get_page_or_readme_or_default_text(path):
     loader = ContentLoader()
     unicode_text = None
     if path:
