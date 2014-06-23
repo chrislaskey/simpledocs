@@ -1,7 +1,7 @@
-import os.path
 from flask import request, redirect, url_for, render_template, g
 from .. lib.contentloader import ContentLoader
 from .. lib.markdownparser import MarkdownParser
+from .. helpers.errorpages import readme_path
 from .. helpers.pageprocessing import common_page_processing
 from .. helpers.searchparser import SearchParser
 from .. helpers.searchtermparser import SearchTermParser
@@ -34,9 +34,7 @@ def page(path):
     loader = ContentLoader()
     unicode_text = loader.load(path)
     if not unicode_text:
-        here = os.path.dirname(__file__)
-        readme = os.path.join(here, 'readme.md')
-        unicode_text = loader.load(readme)
+        unicode_test = loader.load(readme_path())
 
     html_content = MarkdownParser().parse(unicode_text)
     g.templatevars['content'] = html_content
