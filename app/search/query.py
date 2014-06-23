@@ -3,11 +3,11 @@ import subprocess
 from collections import defaultdict
 
 
-def search_query(terms):
-    matches = _SearchResultsParser()._search_for_matches(terms)
+def search_query(keywords):
+    matches = _SearchResultsParser()._search_for_matches(keywords)
     success = _search_success(matches)
     results = {
-        'terms': terms,
+        'keywords': keywords,
         'matches': matches,
         'success': success
     }

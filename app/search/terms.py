@@ -5,7 +5,7 @@ from .. import app
 limit = app.config["SEARCH_TERM_WORD_LIMIT"]
 
 
-def parse(string):
+def parse(search_string):
     split_limit = limit + 3
     words = search_string.split(' ', split_limit)
     return words

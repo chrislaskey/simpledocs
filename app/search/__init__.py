@@ -3,16 +3,16 @@ from . query import search_query
 from . import terms
 
 
-def terms(request):
+def parse(request):
     search_string = request.form.get('search', '')
     words = terms.parse(search_string)
-    terms = terms.verify(words)
-    uri = terms.encode(terms)
+    keywords = terms.verify(words)
+    uri = terms.encode(keywords)
     return uri
 
 
 def results(uri):
     words = terms.decode(uri)
-    terms = terms.verify(words)
-    results = search_query(terms)
+    keywords = terms.verify(words)
+    results = search_query(keywords)
     return results

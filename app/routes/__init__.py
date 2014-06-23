@@ -6,18 +6,18 @@ from .. import search
 from .. import app
 
 
-@app.route('/parse-search-terms', methods = ['post'])
-def parse_search_terms():
-    redirect_to = url_for('search_page', terms=search.terms(request))
+@app.route('/parse-search', methods = ['post'])
+def parse_search():
+    redirect_to = url_for('search_page', keywords=search.parse(request))
     return redirect(redirect_to)
 
 
-@app.route('/search/', defaults={'terms': ''})
-@app.route('/search/<path:terms>')
-def search_page(terms):
+@app.route('/search/', defaults={'keywords': ''})
+@app.route('/search/<path:keywords>')
+def search_page(keywords):
     common_page_processing()
-    search_results = search.results(terms)
-    http_code = 200 if search_results['has_results'] else 404
+    search_results = search.results(keywords)
+    http_code = 200 if search_results['success'] else 404
     g.templatevars['search_results'] = search_results
     return render_template('site/search.html', **g.templatevars), http_code
 
