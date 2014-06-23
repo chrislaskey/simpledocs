@@ -1,16 +1,18 @@
 from .. helpers.searchparser import SearchParser
-from . lexer import tokenize
+from . query import search_query
+from . import terms
 
 
 def terms(request):
     search_string = request.form.get('search', '')
-    terms = tokenize(search_string)
-    as_uri = '/'.join(terms)
-    return as_uri
+    words = terms.parse(search_string)
+    terms = terms.verify(words)
+    uri = terms.encode(terms)
+    return uri
 
 
-def results(terms):
-    search_parser = SearchParser()
-    results = search_parser.search(terms)
-    results['has_results'] = search_parser.is_successful(results)
+def results(uri):
+    words = terms.decode(uri)
+    terms = terms.verify(words)
+    results = search_query(terms)
     return results
