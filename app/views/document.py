@@ -1,6 +1,6 @@
 from flask import render_template, g
 from .. documents import document
-from .. import search
+from .. import nav
 from .. import app
 
 from .. helpers.pageprocessing import common_page_processing

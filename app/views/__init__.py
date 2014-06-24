@@ -1,5 +1,4 @@
 from flask import request, redirect, url_for, render_template, g
-from .. documents import document
 from .. import search
 from .. import nav
 from .. import app
