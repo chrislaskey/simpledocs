@@ -6,6 +6,8 @@ from .. import app
 
 from .. helpers.pageprocessing import common_page_processing
 
+from . import document
+
 
 @app.route('/parse-search', methods = ['post'])
 def parse_search():
@@ -24,13 +26,13 @@ def search_page(terms):
     return render_template('site/search.html', **g.templatevars), http_code
 
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def page(path):
-    common_page_processing()
-    g.templatevars['content'] = document(path)
-    g.templatevars['nav_items'] = nav.items(app)
-    return render_template('page.html', **g.templatevars)
+# @app.route('/', defaults={'path': ''})
+# @app.route('/<path:path>')
+# def page(path):
+#     common_page_processing()
+#     g.templatevars['content'] = document(path)
+#     g.templatevars['nav_items'] = nav.items(app)
+#     return render_template('page.html', **g.templatevars)
 
 
 @app.errorhandler(404)
