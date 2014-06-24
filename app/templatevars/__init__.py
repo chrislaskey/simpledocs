@@ -1,4 +1,4 @@
-from .. import requests
+from .. import uri
 from . bodyclass import BodyClass
 from . pagetitle import PageTitle
 
@@ -21,7 +21,7 @@ class TemplateVariableParser:
         return self.templatevars
 
     def _parse_request(self, request):
-        parsed_request = requests.parse(request)
+        parsed_request = uri.parse(request)
         parsed_request['form'] = request.form
         self.templatevars.update(parsed_request)
 
