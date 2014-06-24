@@ -10,6 +10,11 @@ from .. helpers.pageprocessing import common_page_processing
 @app.route('/<path:path>')
 def page(path):
     common_page_processing()
-    g.templatevars['content'] = document(path)
-    g.templatevars['nav_items'] = nav.items(app)
-    return render_template('page.html', **g.templatevars)
+    print(g.templatevars)
+    return render_template(
+        'page.html',
+        content = document(path),
+        nav_items = nav.items(app),
+        # request = request.vars(request)
+        **g.templatevars
+    )
