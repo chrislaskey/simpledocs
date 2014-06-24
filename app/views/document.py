@@ -1,20 +1,27 @@
-from flask import render_template, g
-from .. documents import document
-from .. import nav
+from flask import render_template, request, g
 from .. import app
-
-from .. helpers.pageprocessing import common_page_processing
+from .. import nav
+from .. import templatevars
+from .. documents import document
 
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def page(path):
-    common_page_processing()
-    print(g.templatevars)
     return render_template(
         'page.html',
         content = document(path),
         nav_items = nav.items(app),
-        # request = request.vars(request)
-        **g.templatevars
+        page = templatevars.parse(request)
     )
+
+# {{ page.body_class }}
+# {{ page.page_title }}
+
+# page = templatevars.parse(request)
+
+# requests.py
+
+# templatevars/__init__.py => parse()
+# templatevars/bodyclass.py => BodyClass()
+# templatevars/pagetitle.py => PageTitle()
