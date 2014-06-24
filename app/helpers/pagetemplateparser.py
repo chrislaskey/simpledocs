@@ -1,6 +1,6 @@
-from .. import app
+# from .. import app
 from .. lib.templateparser import TemplateVariableParser
-from . navigationcreator import NavigationCreator
+# from . navigationcreator import NavigationCreator
 
 
 class PageTemplateVariableParser:
@@ -14,13 +14,13 @@ class PageTemplateVariableParser:
     def parse(self, request, additional_data = {}):
         self.data = additional_data
         self._add_core_templatevars(request)
-        self._parse_templatevars()
+        # self._parse_templatevars()
         return self.templatevars
 
     def _add_core_templatevars(self, request):
         vars = TemplateVariableParser().parse(request)
         self.templatevars.update(vars)
 
-    def _parse_templatevars(self):
-        dir = app.config['DOCUMENTS_DIR']
-        self.templatevars['nav_items'] = NavigationCreator().create(dir)
+    # def _parse_templatevars(self):
+    #     dir = app.config['DOCUMENTS_DIR']
+    #     self.templatevars['nav_items'] = NavigationCreator().create(dir)
