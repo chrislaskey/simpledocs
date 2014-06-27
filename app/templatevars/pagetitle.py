@@ -1,10 +1,12 @@
 import re
+from .. import app
 
 
 class PageTitle:
 
     def get(self, uri_segments):
         sections = self._process_page_title_segments(uri_segments)
+        sections.insert(0, app.config["HEADER_TITLE"])
         if not sections:
             return 'Home'
         elif len(sections) > 1:
