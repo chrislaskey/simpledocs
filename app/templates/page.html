@@ -9,6 +9,17 @@
 
 <body class="{{ page["body_class"] }}">
 
+	<header class="wrapper">
+
+		<div class="container" id="header-content">
+			<div class="sixteen columns">
+				<a class="logo" href="{{ page["header_link"] }}">{{ page["header_title"] }}</a>
+				<a class="icon icon-content" href="#" title="Expand/Contract Content Size">Expand / Contract Content Size</a>
+			</div>
+		</div>
+
+	</header>
+
 	<section class="wrapper" id="wrapper-main">
 
 		<div class="clearfix container" id="main">
@@ -33,15 +44,5 @@
 		</div>
 
 	</section>
-
-	<footer class="wrapper">
-
-		<div class="container" id="footer-content">
-			<div class="sixteen columns alpha">
-				<a class="logo" href="http://github.com/chrislaskey/simple-docs.py">Simple Docs<span>Flat-file, markdown powered, documentation</span></a>
-			</div>
-		</div>
-
-	</footer>
 
 </body>
