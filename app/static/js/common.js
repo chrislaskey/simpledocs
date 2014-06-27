@@ -1,4 +1,4 @@
-app = {}
+var app = {}
 
 app.addNavigationLinks = function(){
 	
