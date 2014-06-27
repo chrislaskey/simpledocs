@@ -113,7 +113,7 @@ header {
 
 /* Header content */
 
-header .logo {
+header #logo {
 	background: url('../images/checkmark.png') center left no-repeat;
 	color: #fff;
 	display: block;
@@ -247,4 +247,41 @@ form.search {
 
 #main h4 {
   margin-top: 20px;
+}
+
+/* Fluid width structure */
+
+@media only screen and (min-width: 768px) {
+
+	body.fluid #header-container {
+		box-sizing: border-box;
+		padding: 0px 40px 0px 40px;
+		width: 100%;
+	}
+
+		body.fluid #header-content {
+			width: 100%;
+		}
+
+	body.fluid #main {
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+		body.fluid #container-content {
+			box-sizing: border-box;
+			margin: 0px;
+			padding: 0px 300px 0px 40px;
+			width: 100%;
+		}
+
+		body.fluid #container-sidebar {
+			box-sizing: border-box;
+			margin: 0px;
+			position: absolute;
+			right: 40px;
+			top: 0px;
+			width: 220px;
+		}
+
 }
