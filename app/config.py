@@ -1,5 +1,6 @@
+DOCUMENTS_DIR = "/path/to/flat/files"
+
 APPLICATION_ROOT = "/docs"
-DOCUMENTS_DIR = "documents"
 
 HEADER_TITLE = "Simple Docs"
 HEADER_LINK = "http://github.com/chrislaskey/simple-docs.py"
