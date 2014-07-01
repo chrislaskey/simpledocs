@@ -3,7 +3,7 @@ Simple Docs
 
 **Simple documentation for IT teams**
 
-Version 1.2.0
+Version 1.2.1
 
 Plain-text to HTML. Searchable. Responsive. Easy.
 
@@ -40,9 +40,14 @@ vim app/config.py
 ./setup.sh
 vim example-apache.conf
 mv example-apache.conf /etc/httpd/conf.d/simpledocs.conf
+htpasswd -c /var/www/simpledocs/htpasswd <username>
 service httpd restart
 ```
 
+Simple Docs will now be running at `http://servername/docs`.
+
+Files will be automatically added on the website when files in the
+`DOCUMENTS_DIR` are added, removed, or updated.
 
 License
 ================================================================================
