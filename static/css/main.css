@@ -1,4 +1,5 @@
-/* Fonts */
+/* Fonts
+ * ============================================================================ */
 
 @font-face {
 	font-family: 'Open Sans';
@@ -21,15 +22,6 @@
 @font-face {
 	font-family: 'Open Sans';
 	font-style: normal;
-	font-weight: 600;
-	src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
-		 url('../fonts/OpenSans-Semibold.woff') format('woff'),
-		 url('../fonts/OpenSans-Semibold.ttf')  format('truetype');
-}
-
-@font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
 	font-weight: 700;
 	src: local('Open Sans Bold'), local('OpenSans-Bold'),
 		 url('../fonts/OpenSans-Bold.woff') format('woff'),
@@ -37,47 +29,257 @@
 }
 
 
-/* Universals */
+/* Normalize CSS
+ * ============================================================================ */
+/* ! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
-html, body {
-	background: #f2f2f2;
-	color: #333;
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden],
+template {
+    display: none;
+}
+
+a {
+    background: transparent;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 1em 40px;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+pre {
+    overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+button {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input {
+    line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+optgroup {
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+
+/* Universals
+ * ============================================================================ */
+
+html,
+body {
+	background: #fff;
+	color: #3e3e3e;
 	font-family: 'Open Sans', sans-serif;
 	font-smooth: always;
 	margin: 0;
 	padding: 0;
+	text-align: center;
 	-webkit-font-smoothing: antialiased;
 }
 
-h1, h2 {
-	margin: 1em 0px;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
-	h1 {
-		font: 600 30px/30px 'Open Sans', sans-serif;
-		margin-top:0px;
-	}
-
-h3, h4, h5, h6 {
-	margin: 1.5em 0px;
-}
-
-form,
-input {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-}
-
-input:focus {
-	outline: none;
-}
-
-code, pre {
+code,
+pre {
 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 
 code {
-	color: #d14;
 	color: #bf1f47;
 	font-size: 14px;
 	white-space: nowrap
@@ -89,221 +291,340 @@ pre {
 	display: block;
 	font-size: 14px;
 	line-height: 20px;
-	margin: 0 0 10px;
+	margin: 0px 0px 10px;
 	padding: 30px;
-	white-space: pre-wrap;
 	white-space: pre;
 	word-break: break-all;
 	word-wrap: break-word;
 }
 
-a.code,
-a.code code {
-	color: #d14;
-	/* text-decoration: none; */
-}
-
 a {
-	color: #d14;
+	text-decoration: none;
 }
 
 
-/* Structure */
+/* Structure
+ * ============================================================================ */
 
 .wrapper {
 	width: 100%;
 }
 
-#wrapper-banner {
-	background: #fff;
+#wrapper-header {
+	background: #fff url('../images/lights.jpg') top center no-repeat;
+	height: 680px;
+	overflow: hidden;
+	position: relative;
 }
 
-	#banner {
-		margin: 0px auto;
-		padding: 30px 0px 20px 0px;
-	}
-
-		#container-banner {
-			border-radius: 5px;
-			margin: 40px 0px 0px -20px;
-			padding: 20px 20px 20px 20px;
-		}
-
-#wrapper-features {
-	background: #282828;
-	border-bottom: 12px solid #333;
-	border-top: 12px solid #333;
-	color: #fff;
-	padding: 40px 0px;
+#wrapper-callout {
+	border-bottom: 1px solid #e2e2e2;
+	border-top: 1px solid #e2e2e2;
+	padding: 45px 0px;
 }
-
-	#features {
-
-	}
 
 #wrapper-about {
-	background: #fff;
-	padding: 60px 0px 40px 0px;
+	padding: 0px 0px 50px 0px;
+	text-align: left;
 }
 
-	#about {
-
-	}
-
-#wrapper-setup {
-	padding: 40px 0px;
+#wrapper-action {
+	background: #161b21 url('../images/parking-lot.jpg') top center no-repeat;
+	padding: 80px 0px 70px 0px;
 }
 
-	#setup {
-
-	}
-
-#wrapper-faq {
-	background: #fff;
-	padding: 40px 0px;
+#wrapper-footer {
+	background: #0f1114;
+	padding: 30px 0px 30px 0px;
 }
 
-	#faq {
 
-	}
+/* Header
+ * ============================================================================ */
 
-#wrapper-download {
-	background: #282828;
-	border-bottom: 12px solid #333;
-	border-top: 12px solid #333;
+#logo {
+	background: rgba(41, 41, 41, 0.90);
+	border-radius: 4px 4px 0px 0px;
 	color: #fff;
-	padding: 60px 0px;
+	display: inline-block;
+	font: 400 44px/44px 'Open Sans', Helvetica, Arial, sans-serif;
+	margin: 94px auto 0px auto;
+	padding: 10px 20px 12px 20px;
 }
 
-/* Banner Content */
+	#logo i {
+		background: url('../images/icon-logo.png') center center no-repeat;
+		background-size: contain;
+		display: inline-block;
+		height: 44px;
+		margin-right: 10px;
+		text-indent: -5000px;
+		width: 44px;
+	}
 
-#banner h1 {
-	font: 600 40px/40px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
-	margin: 0px 0px 40px 0px;
-	padding: 0px;
-	text-transform: lowercase;
+#sub-logo {
+	background: rgba(140, 2, 86, 0.90);
+	border-radius: 4px;
+	color: #fff;
+	display: inline-block;
+	font: 300 34px/34px 'Open Sans', Helvetica, Arial, sans-serif;
+	margin: 0px auto;
+	padding: 10px 20px 12px 20px;
 }
 
-#banner h2 {
-	font: 600 20px/20px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
-	margin: 0px 0px 20px 0px;
-	padding: 0px;
+#image-plain-text {
+	background: url('../images/plain-text.png') top left no-repeat;
+	background-size: contain;
+	height: 513px;
+	left: -24px;
+	position: absolute;
+	top: 290px;
+	width: 810px;
 }
 
-#banner p.subtext {
-	font: 300 20px/1.3em 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
-	margin: 0px 0px 40px 0px;
-	padding: 0px;
+#image-html-output {
+	background: url('../images/html-output.png') top left no-repeat;
+	background-size: contain;
+	height: 602px;
+	left: 150px;
+	position: absolute;
+	top: 368px;
+	width: 825px;
 }
 
-#banner p.actions {
+
+/* Callout
+ * ============================================================================ */
+
+#callout h2 {
+	font-size: 35px;
+	font-weight: 300;
+	line-height: 35px;
 	margin: 0px;
-	padding: 0px;
 }
 
-	a.download-button {
-		background: #da3958;
-		border-radius: 3px;
+
+/* About
+ * ============================================================================ */
+
+#about article {
+	color: #4f4f4f;
+	float: left;
+	font-size: 14px;
+	line-height: 24px;
+	margin-right: 11%;
+	margin-top: 65px;
+	width: 26%;
+}
+
+	#about article:last-child {
+		margin-right: 0%;
+	}
+
+	#about h4 {
+		color: #e87b50;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 14px;
+		margin: 0px 0px 1.5em 0px;
+	}
+
+
+/* Action
+ * ============================================================================ */
+
+#action p {
+	color: #fff;
+	font: 300 30px/30px 'Open Sans', Helvetica, Arial, sans-serif;
+	margin: 0px;
+}
+
+	#download-button {
+		background: rgba(29, 113, 144, 1.00);
+		border-radius: 4px;
 		color: #fff;
 		display: inline-block;
-		font: 700 14px/14px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
-		letter-spacing: 2px;
-		margin: 0px 14px 0px 0px;
-		padding: 18px 24px;
-		text-decoration: none;
-		text-transform: uppercase;
+		margin: 0px 20px 0px 0px;
+		padding: 13px 20px 13px 20px;
 	}
 
-		a.download-button:hover {
-			background: #c92847;
+		#download-button i {
+			background: url('../images/icon-download.png') left center no-repeat;
+			background-size: contain;
+			display: inline-block;
+			height: 32px;
+			margin-right: 7px;
+			text-indent: -5000px;
+			width: 32px;
 		}
 
-	a.repo{
-		border-bottom: 1px solid #888;
-		color: #181818;
-		display: inline-block;
-		font: 400 16px/16px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
-		padding: 0px 0px 1px 0px;
-		text-decoration: none;
+	#action sup {
+		color: #777;
 	}
 
-#banner img {
-	float:right;
-	height: auto;
-	margin-right: 0px;
-	max-width: 100%;
-	width: 500px;
+
+/* Footer
+ * ============================================================================ */
+
+#footer p {
+	color: #7a7a7a;
+	font-size: 14px;
+	line-height: 14px;
+	margin: 0px;
 }
 
+/* Mobile
+ * ============================================================================ */
 
-/* Features Content */
+@media only screen and (min-width: 1910px) {
 
-div.feature{
-
-}
-
-	#features h4 {
-		font: 700 17px/22px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
-		text-align: left;
-		margin: 20px 0px 1.0em 0px;
+	#wrapper-header {
+		background-size: cover;
 	}
-
-	#features p{
-		font: 400 15px/22px 'Open Sans', 'Proxima Nova', Helvetica Neue, Arial, sans-serif;
-		margin: 0px 0px 20px 0px;
-	}
-
-
-/* FAQ Content */
-
-#faq dl {
-	margin: 30px 0px 30px 0px;
-}
-
-	#faq dl dt {
-		font-weight: 600;
-		margin: 0px 0px 0em 0px;
-	}
-
-	#faq dl dd {
-		color: #585858;
-		margin: 0px;
-		padding: 0px 0px 0px 0px;
-	}
-
-
-/* Download Content */
-
-#download {
 
 }
 
-	#download a.repo{
-		color: #fff;
+@media only screen and (max-width: 959px) {
+
+	#image-plain-text {
+		top: 318px;
+		width: 700px;
 	}
 
-/* Mobile styles */
-
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-
-	#banner {
-		padding-top: 0px;
+	#image-html-output {
+		left: 110px;
+		top: 400px;
+		width: 700px;
 	}
-	
-		#banner-image {
-			margin-top: 90px;
+
+	#callout h2 {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	#about article {
+		margin-right: 8%;
+		width: 28%;
+	}
+
+	#action p {
+		font-size: 26px;
+		line-height: 26px;
+	}
+
+		#download-button i {
+			height: 26px;
+			width: 26px;
 		}
 
 }
 
-@media only screen and (min-width: 240px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 
-	#banner {
-		padding-top: 0px;
+	#wrapper-header {
+		height: 400px;
 	}
 
-	#download a.download-button {
-		margin-bottom:20px;
+		#logo {
+			font-size: 34px;
+			line-height: 34px;
+			margin-top: 60px;
+		}
+
+			#logo i {
+				height: 34px;
+				width: 34px;
+			}
+
+		#sub-logo {
+			font-size: 24px;
+			line-height: 24px;
+		}
+
+		#image-plain-text {
+			top: 210px;
+			width: 420px;
+		}
+
+		#image-html-output {
+			left: 20px;
+			top: 254px;
+			width: 420px;
+		}
+
+	#wrapper-callout {
+		padding: 35px 0px;
+	}
+
+	#about article {
+		margin-right: 0%;
+		margin-top: 30px;
+		width: 100%;
+	}
+
+		#about article:first-child {
+			margin-top: 50px;
+		}
+
+	#wrapper-action {
+		padding: 50px 0px 40px 0px;
+	}
+
+		#action p {
+			font-size: 24px;
+			line-height: 40px;
+		}
+
+			#download-button {
+				line-height: 24px;
+			}
+
+				#download-button i {
+					height: 24px;
+					width: 24px;
+				}
+
+}
+
+@media only screen and (max-width: 479px) {
+
+	#wrapper-header {
+		height: 280px;
+	}
+
+		#logo {
+			font-size: 24px;
+			line-height: 24px;
+			margin-top: 30px;
+		}
+
+			#logo i {
+				height: 24px;
+				width: 24px;
+			}
+
+		#sub-logo {
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 14px;
+		}
+
+		#image-plain-text {
+			top: 140px;
+			left: 0px;
+			width: 280px;
+		}
+
+		#image-html-output {
+			left: 20px;
+			top: 176px;
+			width: 280px;
+		}
+
+	#callout h2 {
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 26px;
 	}
 
 }

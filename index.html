@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Simple Docs | Plain Text to Markdown documentation simply</title>
+	<title>Simple Docs | Simple documentation for IT teams</title>
 
 	<link rel="stylesheet" href="static/css/skeleton.css" />
 	<link rel="stylesheet" href="static/css/main.css" />
@@ -14,45 +14,31 @@
 
 <body>
 
-	<section class="wrapper" id="wrapper-banner">
+	<section class="wrapper" id="wrapper-header">
 
-		<div class="clearfix container" id="banner">
+		<div class="clearfix container" id="header">
 
-			<div class="seven columns alpha" id="container-banner">
-				<h1>Simple Docs</h1>
-				<h2>Plain text to HTML without the fuss</h2>
-				<p class="subtext">No compilation needed. No caches to clear.<br/>Setup once and get back to writing docs.</p>
-				<p class="actions"><a class="download-button" href="https://github.com/chrislaskey/simple-docs/archive/github.zip">download</a> <a class="repo" href="https://github.com/chrislaskey/simple-docs">view source</a></p>
-			</div>
+			<div class="sixteen columns alpha omega" id="container-header">
 
-			<div class="nine columns omega" id="banner-image" style="padding:50px 0px 30px 0px;">
-				<img alt="Example of layout" src="static/images/responsive.png" style="float:right; margin-right: 0px;"/>
+				<h1 id="logo"><i>logo-icon</i>Simple Docs</h1><br/>
+				<h2 id="sub-logo">Simple documentation for IT teams</h2>
+
+				<div id="image-plain-text"></div>
+				<div id="image-html-output"></div>
+
 			</div>
 
 		</div>
 
 	</section>
 
-	<section class="wrapper" id="wrapper-features">
+	<section class="wrapper" id="wrapper-callout">
 
-		<div class="clearfix container" id="features">
+		<div class="clearfix container" id="callout">
 
-			<div class="sixteen columns alpha omega" id="container-features">
+			<div class="sixteen columns alpha omega" id="container-callout">
 
-				<div class="feature column one-third alpha">
-					<h4>Simplifies Documentation</h4>
-					<p>Write in plain text or Markdown. Mirrors the filesystem hierarchy. Write straight from the command-line</p>
-				</div>
-
-				<div class="feature column one-third">
-					<h4>Smart Features</h4>
-					<p>Search filenames and content and return weighted results. Responsive design for reading docs on the move.</p>
-				</div>
-
-				<div class="feature column one-third omega">
-					<h4>Familiar Toolchain</h4>
-					<p>Manage write access using Linux user permissions. Manage read access with webserver config files.</p>
-				</div>
+				<h2>Plain-text to HTML. Searchable. Responsive. Easy.</h2>
 
 			</div>
 
@@ -66,38 +52,20 @@
 
 			<div class="sixteen columns alpha omega" id="container-about">
 
-				<h1>Why Simple Docs?</h1>
+				<article>
+					<h4>Plain-text Flat Files</h4>
+					<p>Simple Docs is a thin web interface that mirrors flat files on a server. Navigation mirrors file hierarchy. Markdown parser adds rich elements like images, links, and code blocks.</p>
+				</article>
 
-				<p>Ever thought "I should write this down" while working and end up not doing it? I did.</p>
-				
-				<p>Though robust, all the documentation software I used required too many steps between initial thought and execution. By the time I opened a new browser tab, remembered my login information, navigated the admin panel and created a new document page I had lost my current mental context and any sense of flow.</p>
+				<article>
+					<h4>Low Management</h4>
+					<p>Uses existing system configuration, file permissions for write control, web server for access control. No compilation jobs to run, no caches to clear, and no database to configure.</p>
+				</article>
 
-				<p>With Simple Docs I can <strong>stay on the command-line, use my preferred text editor, write notes in Markdown, organize everything using files and directories, and have it all mirrored online</strong>. No compilation needed. No caches to clear. No context switches. No more long series of steps. Setup once and get back to writing docs.</p>
-
-				<p>Simple docs doesn't replace the many robust and powerful professional documentation software. Instead it makes it easier to capture, organize, and edit knowledge without all the steps between thought and execution.</p>
-
-			</div>
-
-		</div>
-
-	</section>
-
-	<section class="wrapper" id="wrapper-setup">
-
-		<div class="clearfix container" id="setup">
-
-			<div class="sixteen columns alpha omega" id="container-setup">
-
-				<h1>Setup</h1>
-
-				<p>The only requirements for Simple Docs is <a class="code" href="http://python.org/"><code>Python +2.6</code></a>, <a class="code" href="https://pypi.python.org/pypi/pip"><code>Python PIP</code></a> and a web server. Setup is straight-forward:</p>
-
-				<pre>$ git clone https://github.com/chrislaskey/simple-docs project_directory
-$ cd project_directory
-$ ./setup.sh
-$ ln -s your_docs_directory ./docs</pre>
-
-				<p>The last step is setting up the webserver. Simple Docs uses <a class="code" href="#"><code>Python Flask</code></a> under the hood any of the Flask web server <a href="http://flask.pocoo.org/docs/deploying/">deployment options</a> will work.</p>
+				<article>
+					<h4>Easy to Deploy</h4>
+					<p>Powered by Python Flask. Deployable on any Linux server,  whether its Debian with Nginx, CentOS with Apache, or Arch with Gunicorn.</p>
+				</article>
 
 			</div>
 
@@ -105,58 +73,13 @@ $ ln -s your_docs_directory ./docs</pre>
 
 	</section>
 
-	<section class="wrapper" id="wrapper-faq">
+	<section class="wrapper" id="wrapper-action">
 
-		<div class="clearfix container" id="faq">
+		<div class="clearfix container" id="action">
 
-			<div class="sixteen columns alpha omega" id="container-faq">
+			<div class="sixteen columns alpha omega" id="container-action">
 
-				<h1>FAQ</h1>
-
-				<dl>
-					<dt>What are some of the use cases for Simple Docs?</dt>
-					<dd>Simple Docs is great for capturing all the information that usually falls between the cracks. At work I use it to collaboratively keep notes about our evolving systems architecture. Personally I use it to organize programming, systems, and design notes from over the years.</dd>
-				</dl>
-
-				<dl>
-					<dt>What platforms can Simple Docs run on?</dt>
-					<dd>The application requires <code>Python +2.6</code>, <code>Python PIP</code> and a web server. The search functionality requires <code>grep</code>, <code>ls</code> and <code>find</code>. The application has been tested in <code>Debian</code> and <code>RHEL</code> Linux distributions. Though not tested, there should be nothing to prevent it from running on <code>Mac OS X</code>, <code>Solaris</code> or <code>FreeBSD</code>.</dd>
-				</dl>
-
-				<dl>
-					<dt>How complex is Simple Docs under the hood?</dt>
-					<dd>Simple Docs extends the idea of simplicity to the technical stack. Instead of creating menus and content hiearchies, what the file system is directly mirrored. Instead of creating separate website users and permissions, existing Unix user and group permissions are used. Search online using the same tools as the command line.</dd>
-				</dl>
-
-				<dl>
-					<dt>What's the recommended web server?</dt>
-					<dd>The best advice is to use what is familiar. <code>Apache + Mod_WSGI</code> is the most common, though <code>Nginx + uWSGI</code> and <code>Nginx + gunicorn</code> are becoming increasingly popular python web stacks.</dd>
-				</dl>
-
-				<dl>
-					<dt>Are symlinks allowed for the <code>./docs</code> directory?</dt>
-					<dd>Not only are they allowed, they are encouraged as standard practice. This allows docs to remain in their current fixed location, or fixed locations.</dd>
-				</dl>
-
-				<dl>
-					<dt>How do I restrict viewing access?</dt>
-					<dd>A core tenant of Simple Docs is to rely on systems that already exist. Permissions can be handled using ip filtering or web server authorization. The former can be handled directly with <code>iptables</code> rules. Most web servers support both ip filtering and simple authorization schemes.</dd>
-				</dl>
-
-				<dl>
-					<dt>How do I manage write access?</dt>
-					<dd>A core tenant of Simple Docs is to rely on systems that already exist. Simple Docs relies on file system user/group file permissions.</dd>
-				</dl>
-
-				<dl>
-					<dt>How does the weighted search work?</dt>
-					<dd>Search terms are filtered into individual search words, composed of only letters and numbers. Each term is then searched against filenames and file contents. Filename matches carry more weight than a file content match.</dd>
-				</dl>
-
-				<dl>
-					<dt>What is the license?</dt>
-					<dd>The project is released under the a four-clause MIT license. See the <a href="https://github.com/chrislaskey/simple-docs/blob/github/license.txt">included license.txt</a> for details and commentary on license choice.</dd>
-				</dl>
+				<p><a id="download-button" href="https://github.com/chrislaskey/simpledocs"><i>download-icon</i>Download</a>Edit app/config.py. Run setup.sh. That's it.<sup>*</sup></p>
 
 			</div>
 
@@ -164,12 +87,14 @@ $ ln -s your_docs_directory ./docs</pre>
 
 	</section>
 
-	<section class="wrapper" id="wrapper-download">
+	<section class="wrapper" id="wrapper-footer">
 
-		<div class="clearfix container" id="download">
+		<div class="clearfix container" id="footer">
 
-			<div class="sixteen columns alpha omega" id="container-download">
-				<p class="actions"><a class="download-button" href="https://github.com/chrislaskey/simple-docs/archive/github.zip">download simple docs</a> or <a class="repo" href="https://github.com/chrislaskey/simple-docs">view the source</a> on github</p>
+			<div class="sixteen columns alpha omega" id="container-footer">
+
+				<p>* Requires an HTTP server with WSGI support. Project includes a complete Apache config example.</p>
+
 			</div>
 
 		</div>
