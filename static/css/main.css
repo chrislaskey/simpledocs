@@ -352,6 +352,10 @@ a {
 	padding: 10px 20px 12px 20px;
 }
 
+	#logo a {
+		color: #fff;
+	}
+
 	#logo i {
 		background: url('../images/icon-logo.png') center center no-repeat;
 		background-size: contain;
