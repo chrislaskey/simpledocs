@@ -3,9 +3,14 @@ Simple Docs
 
 #### Simple documentation for IT teams
 
-Version 1.2.2
+Version 1.2.3
 
-Plain-text to HTML. Searchable. Responsive. Easy.
+For more information and latest updates visit
+[simpledocs.co](http://simpledocs.co).
+
+![Simple Docs Screenshot](design/screenshot.png)
+
+#### Plain-text to HTML. Searchable. Responsive. Easy.
 
 **Plain-text Flat Files**
 
