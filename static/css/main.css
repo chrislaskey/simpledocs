@@ -2,30 +2,30 @@
  * ============================================================================ */
 
 @font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 300;
-	src: local('Open Sans Light'), local('OpenSans-Light'),
-		 url('../fonts/OpenSans-Light.woff') format('woff'),
-		 url('../fonts/OpenSans-Light.ttf')  format('truetype');
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'),
+         url('../fonts/OpenSans-Light.woff') format('woff'),
+         url('../fonts/OpenSans-Light.ttf')  format('truetype');
 }
 
 @font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Open Sans Regular'), local('OpenSans-Regular'),
-		 url('../fonts/OpenSans-Regular.woff') format('woff'),
-		 url('../fonts/OpenSans-Regular.ttf')  format('truetype');
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'),
+         url('../fonts/OpenSans-Regular.woff') format('woff'),
+         url('../fonts/OpenSans-Regular.ttf')  format('truetype');
 }
 
 @font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 700;
-	src: local('Open Sans Bold'), local('OpenSans-Bold'),
-		 url('../fonts/OpenSans-Bold.woff') format('woff'),
-		 url('../fonts/OpenSans-Bold.ttf')  format('truetype');
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'),
+         url('../fonts/OpenSans-Bold.woff') format('woff'),
+         url('../fonts/OpenSans-Bold.ttf')  format('truetype');
 }
 
 
@@ -258,14 +258,14 @@ th {
 
 html,
 body {
-	background: #fff;
-	color: #3e3e3e;
-	font-family: 'Open Sans', sans-serif;
-	font-smooth: always;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	-webkit-font-smoothing: antialiased;
+    background: #fff;
+    color: #3e3e3e;
+    font-family: 'Open Sans', sans-serif;
+    font-smooth: always;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
 }
 
 *,
@@ -276,30 +276,30 @@ body {
 
 code,
 pre {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 
 code {
-	color: #bf1f47;
-	font-size: 14px;
-	white-space: nowrap
+    color: #bf1f47;
+    font-size: 14px;
+    white-space: nowrap
 }
 
 pre {
-	background: #303030;
-	color: #fff;
-	display: block;
-	font-size: 14px;
-	line-height: 20px;
-	margin: 0px 0px 10px;
-	padding: 30px;
-	white-space: pre;
-	word-break: break-all;
-	word-wrap: break-word;
+    background: #303030;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0px 0px 10px;
+    padding: 30px;
+    white-space: pre;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 
@@ -307,35 +307,35 @@ a {
  * ============================================================================ */
 
 .wrapper {
-	width: 100%;
+    width: 100%;
 }
 
 #wrapper-header {
-	background: #fff url('../images/lights.jpg') top center no-repeat;
-	height: 680px;
-	overflow: hidden;
-	position: relative;
+    background: #fff url('../images/lights.jpg') top center no-repeat;
+    height: 680px;
+    overflow: hidden;
+    position: relative;
 }
 
 #wrapper-callout {
-	border-bottom: 1px solid #e2e2e2;
-	border-top: 1px solid #e2e2e2;
-	padding: 45px 0px;
+    border-bottom: 1px solid #e2e2e2;
+    border-top: 1px solid #e2e2e2;
+    padding: 45px 0px;
 }
 
 #wrapper-about {
-	padding: 0px 0px 50px 0px;
-	text-align: left;
+    padding: 0px 0px 50px 0px;
+    text-align: left;
 }
 
 #wrapper-action {
-	background: #161b21 url('../images/parking-lot.jpg') top center no-repeat;
-	padding: 80px 0px 70px 0px;
+    background: #161b21;
+    padding: 80px 0px 70px 0px;
 }
 
 #wrapper-footer {
-	background: #0f1114;
-	padding: 30px 0px 30px 0px;
+    background: #0f1114;
+    padding: 35px 0px 35px 0px;
 }
 
 
@@ -343,57 +343,57 @@ a {
  * ============================================================================ */
 
 #logo {
-	background: rgba(41, 41, 41, 0.90);
-	border-radius: 4px 4px 0px 0px;
-	color: #fff;
-	display: inline-block;
-	font: 400 44px/44px 'Open Sans', Helvetica, Arial, sans-serif;
-	margin: 94px auto 0px auto;
-	padding: 10px 20px 12px 20px;
+    background: rgba(41, 41, 41, 0.90);
+    border-radius: 4px 4px 0px 0px;
+    color: #fff;
+    display: inline-block;
+    font: 400 44px/44px 'Open Sans', Helvetica, Arial, sans-serif;
+    margin: 94px auto 0px auto;
+    padding: 10px 20px 12px 20px;
 }
 
-	#logo a {
-		color: #fff;
-	}
+    #logo a {
+        color: #fff;
+    }
 
-	#logo i {
-		background: url('../images/icon-logo.png') center center no-repeat;
-		background-size: contain;
-		display: inline-block;
-		height: 44px;
-		margin-right: 10px;
-		text-indent: -5000px;
-		width: 44px;
-	}
+    #logo i {
+        background: url('../images/icon-logo.png') center center no-repeat;
+        background-size: contain;
+        display: inline-block;
+        height: 44px;
+        margin-right: 10px;
+        text-indent: -5000px;
+        width: 44px;
+    }
 
 #sub-logo {
-	background: rgba(140, 2, 86, 0.90);
-	border-radius: 4px;
-	color: #fff;
-	display: inline-block;
-	font: 300 34px/34px 'Open Sans', Helvetica, Arial, sans-serif;
-	margin: 0px auto;
-	padding: 10px 20px 12px 20px;
+    background: rgba(140, 2, 86, 0.90);
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font: 300 34px/34px 'Open Sans', Helvetica, Arial, sans-serif;
+    margin: 0px auto;
+    padding: 10px 20px 12px 20px;
 }
 
 #image-plain-text {
-	background: url('../images/plain-text.png') top left no-repeat;
-	background-size: contain;
-	height: 513px;
-	left: -24px;
-	position: absolute;
-	top: 290px;
-	width: 810px;
+    background: url('../images/plain-text.png') top left no-repeat;
+    background-size: contain;
+    height: 513px;
+    left: -24px;
+    position: absolute;
+    top: 290px;
+    width: 810px;
 }
 
 #image-html-output {
-	background: url('../images/html-output.png') top left no-repeat;
-	background-size: contain;
-	height: 602px;
-	left: 150px;
-	position: absolute;
-	top: 368px;
-	width: 825px;
+    background: url('../images/html-output.png') top left no-repeat;
+    background-size: contain;
+    height: 602px;
+    left: 150px;
+    position: absolute;
+    top: 368px;
+    width: 825px;
 }
 
 
@@ -401,10 +401,10 @@ a {
  * ============================================================================ */
 
 #callout h2 {
-	font-size: 35px;
-	font-weight: 300;
-	line-height: 35px;
-	margin: 0px;
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 35px;
+    margin: 0px;
 }
 
 
@@ -412,223 +412,228 @@ a {
  * ============================================================================ */
 
 #about article {
-	color: #4f4f4f;
-	float: left;
-	font-size: 14px;
-	line-height: 24px;
-	margin-right: 11%;
-	margin-top: 65px;
-	width: 26%;
+    color: #4f4f4f;
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+    margin-right: 11%;
+    margin-top: 65px;
+    width: 26%;
 }
 
-	#about article:last-child {
-		margin-right: 0%;
-	}
+    #about article:last-child {
+        margin-right: 0%;
+    }
 
-	#about h4 {
-		color: #e87b50;
-		font-size: 14px;
-		font-weight: 700;
-		line-height: 14px;
-		margin: 0px 0px 1.5em 0px;
-	}
+    #about h4 {
+        color: #e87b50;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 14px;
+        margin: 0px 0px 1.5em 0px;
+    }
 
 
 /* Action
  * ============================================================================ */
 
 #action p {
-	color: #fff;
-	font: 300 30px/30px 'Open Sans', Helvetica, Arial, sans-serif;
-	margin: 0px;
+    color: #fff;
+    font: 300 30px/30px 'Open Sans', Helvetica, Arial, sans-serif;
+    margin: 0px;
 }
 
-	#download-button {
-		background: rgba(29, 113, 144, 1.00);
-		border-radius: 4px;
-		color: #fff;
-		display: inline-block;
-		margin: 0px 20px 0px 0px;
-		padding: 13px 20px 13px 20px;
-	}
+    #download-button {
+        background: rgba(29, 113, 144, 1.00);
+        border-radius: 4px;
+        color: #fff;
+        display: inline-block;
+        margin: 0px 20px 0px 0px;
+        padding: 13px 20px 13px 20px;
+    }
 
-		#download-button i {
-			background: url('../images/icon-download.png') left center no-repeat;
-			background-size: contain;
-			display: inline-block;
-			height: 32px;
-			margin-right: 7px;
-			text-indent: -5000px;
-			width: 32px;
-		}
+        #download-button i {
+            background: url('../images/icon-download.png') left center no-repeat;
+            background-size: contain;
+            display: inline-block;
+            height: 32px;
+            margin-right: 7px;
+            text-indent: -5000px;
+            width: 32px;
+        }
 
-	#action sup {
-		color: #777;
-	}
+    #action sup {
+        color: #777;
+    }
 
 
 /* Footer
  * ============================================================================ */
 
 #footer p {
-	color: #7a7a7a;
-	font-size: 14px;
-	line-height: 14px;
-	margin: 0px;
+    color: #aaa;
+    font-size: 15px;
+    line-height: 15px;
+    margin: 0px;
 }
+
+    #footer a {
+        color: #fff;
+    }
+
 
 /* Mobile
  * ============================================================================ */
 
 @media only screen and (min-width: 1910px) {
 
-	#wrapper-header {
-		background-size: cover;
-	}
+    #wrapper-header {
+        background-size: cover;
+    }
 
 }
 
 @media only screen and (max-width: 959px) {
 
-	#image-plain-text {
-		top: 318px;
-		width: 700px;
-	}
+    #image-plain-text {
+        top: 318px;
+        width: 700px;
+    }
 
-	#image-html-output {
-		left: 110px;
-		top: 400px;
-		width: 700px;
-	}
+    #image-html-output {
+        left: 110px;
+        top: 400px;
+        width: 700px;
+    }
 
-	#callout h2 {
-		font-size: 30px;
-		line-height: 30px;
-	}
+    #callout h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
 
-	#about article {
-		margin-right: 8%;
-		width: 28%;
-	}
+    #about article {
+        margin-right: 8%;
+        width: 28%;
+    }
 
-	#action p {
-		font-size: 26px;
-		line-height: 26px;
-	}
+    #action p {
+        font-size: 26px;
+        line-height: 26px;
+    }
 
-		#download-button i {
-			height: 26px;
-			width: 26px;
-		}
+        #download-button i {
+            height: 26px;
+            width: 26px;
+        }
 
 }
 
 @media only screen and (max-width: 767px) {
 
-	#wrapper-header {
-		height: 400px;
-	}
+    #wrapper-header {
+        height: 400px;
+    }
 
-		#logo {
-			font-size: 34px;
-			line-height: 34px;
-			margin-top: 60px;
-		}
+        #logo {
+            font-size: 34px;
+            line-height: 34px;
+            margin-top: 60px;
+        }
 
-			#logo i {
-				height: 34px;
-				width: 34px;
-			}
+            #logo i {
+                height: 34px;
+                width: 34px;
+            }
 
-		#sub-logo {
-			font-size: 24px;
-			line-height: 24px;
-		}
+        #sub-logo {
+            font-size: 24px;
+            line-height: 24px;
+        }
 
-		#image-plain-text {
-			top: 210px;
-			width: 420px;
-		}
+        #image-plain-text {
+            top: 210px;
+            width: 420px;
+        }
 
-		#image-html-output {
-			left: 20px;
-			top: 254px;
-			width: 420px;
-		}
+        #image-html-output {
+            left: 20px;
+            top: 254px;
+            width: 420px;
+        }
 
-	#wrapper-callout {
-		padding: 35px 0px;
-	}
+    #wrapper-callout {
+        padding: 35px 0px;
+    }
 
-	#about article {
-		margin-right: 0%;
-		margin-top: 30px;
-		width: 100%;
-	}
+    #about article {
+        margin-right: 0%;
+        margin-top: 30px;
+        width: 100%;
+    }
 
-		#about article:first-child {
-			margin-top: 50px;
-		}
+        #about article:first-child {
+            margin-top: 50px;
+        }
 
-	#wrapper-action {
-		padding: 50px 0px 40px 0px;
-	}
+    #wrapper-action {
+        padding: 50px 0px 40px 0px;
+    }
 
-		#action p {
-			font-size: 24px;
-			line-height: 40px;
-		}
+        #action p {
+            font-size: 24px;
+            line-height: 40px;
+        }
 
-			#download-button {
-				line-height: 24px;
-			}
+            #download-button {
+                line-height: 24px;
+            }
 
-				#download-button i {
-					height: 24px;
-					width: 24px;
-				}
+                #download-button i {
+                    height: 24px;
+                    width: 24px;
+                }
 
 }
 
 @media only screen and (max-width: 479px) {
 
-	#wrapper-header {
-		height: 280px;
-	}
+    #wrapper-header {
+        height: 280px;
+    }
 
-		#logo {
-			font-size: 24px;
-			line-height: 24px;
-			margin-top: 30px;
-		}
+        #logo {
+            font-size: 24px;
+            line-height: 24px;
+            margin-top: 30px;
+        }
 
-			#logo i {
-				height: 24px;
-				width: 24px;
-			}
+            #logo i {
+                height: 24px;
+                width: 24px;
+            }
 
-		#sub-logo {
-			font-size: 14px;
-			font-weight: 700;
-			line-height: 14px;
-		}
+        #sub-logo {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 14px;
+        }
 
-		#image-plain-text {
-			top: 140px;
-			left: 0px;
-			width: 280px;
-		}
+        #image-plain-text {
+            top: 140px;
+            left: 0px;
+            width: 280px;
+        }
 
-		#image-html-output {
-			left: 20px;
-			top: 176px;
-			width: 280px;
-		}
+        #image-html-output {
+            left: 20px;
+            top: 176px;
+            width: 280px;
+        }
 
-	#callout h2 {
-		font-size: 20px;
-		font-weight: 400;
-		line-height: 26px;
-	}
+    #callout h2 {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+    }
 
 }
