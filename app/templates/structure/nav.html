@@ -68,7 +68,7 @@
 
 		{% set spaces = ("&nbsp;" * 4) * depth %}
 
-		<option value="/{{ root }}/{{ file.path }}">{{ spaces|safe }}{{ file.name }}</option>
+		<option value="{{ root }}/{{ file.path }}">{{ spaces|safe }}{{ file.name }}</option>
 
 	{% elif type == "li" %}
 

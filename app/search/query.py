@@ -1,12 +1,16 @@
 import os.path
 import subprocess
 from collections import defaultdict
+from .. import app
 
 
 def search_query(terms, query_engine_type='command_line'):
+    base_url = '/' + app.config['BASE_URL'].strip('/')
+    dir = app.config['DOCUMENTS_DIR']
     query_engine = query_engine_factory(query_engine_type)
-    matches = query_engine.search(terms)
-    success = True if matches else False
+    results = query_engine.search(dir, terms)
+    success = True if results else False
+    matches = [parse_match(base_url, dir, x) for x in results]
     results = {
         'terms': terms,
         'matches': matches,
@@ -19,14 +23,15 @@ def query_engine_factory(type):
     if type == 'command_line':
         return _CommandLineSearch()
     else:
-        raise Exception('Uknown search engine {0}'.format(name))
+        raise Exception('Unknown search engine {0}'.format(name))
 
 
 class _CommandLineSearch:
 
     ''' Executes native file system search using Python subprocesses '''
 
-    def search(self, terms):
+    def search(self, dir, terms):
+        self.dir = dir
         self.cli = _CommandLine()
         self.results = defaultdict(int)
         for term in terms:
@@ -37,13 +42,13 @@ class _CommandLineSearch:
 
     def _search_file_names(self, term):
         term = '*{0}*'.format(term)
-        command = ['find', 'docs/', '-iname', term]
+        command = ['find', self.dir, '-iname', term]
         options = {'raise_exception_on_failure': False}
         results = self.cli.execute(command, **options)
         self._compile_command_results(results, 3)
 
     def _search_file_contents(self, term):
-        command = ['grep', '-l', '-r', '-i', term, 'docs/']
+        command = ['grep', '-l', '-r', '-i', term, self.dir]
         options = {'raise_exception_on_failure': False}
         results = self.cli.execute(command, **options)
         self._compile_command_results(results)
@@ -105,3 +110,14 @@ class _CommandLine:
             raise Exception('Stdout: {0} | Stderr: {1}'.format(stdout, stderr))
         else:
             return ''
+
+
+def parse_match(base_url, dir, file):
+    if file.startswith(dir):
+        trim_to = len(dir)
+        file = file[trim_to:]
+
+    file = file.lstrip('/')
+    path = base_url + '/' + file
+
+    return path
