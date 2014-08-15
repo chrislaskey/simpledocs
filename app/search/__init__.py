@@ -1,4 +1,3 @@
-from .. helpers.searchparser import SearchParser
 from . query import search_query
 from . import terms
 

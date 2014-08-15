@@ -73,7 +73,7 @@
 	{% elif type == "li" %}
 
 		<li class="{{ selected }}">
-			<a class="{{ selected }}" href="/{{ root }}/{{ file.path }}">{{ file.name }}</a>
+		    <a class="{{ selected }}" href="{{ root }}/{{ file.path }}">{{ file.name }}</a>
 		</li>
 
 	{% endif %}

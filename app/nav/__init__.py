@@ -3,25 +3,29 @@ import re
 
 
 def items(app):
+    base_url = '/' + app.config["BASE_URL"].strip('/')
     dir = app.config["DOCUMENTS_DIR"]
-    return NavigationCreator().create(dir)
+    return NavigationCreator(base_url).create(dir)
 
 
 class NavigationCreator:
 
-    def __init__(self):
+    def __init__(self, base_url = '/'):
+        self.base_url = base_url
         self.nav = []
 
     def create(self, path):
+        self.path = path
         self.nav = self._walk(path)
         return self.nav
 
     def _walk(self, path):
         for root, dirs, files in os.walk(path):
+            url_root = self._parse_url_root(root)
             level = self._parse_level(root)
             files = self._parse_filenames(files)
             contents = {
-                "root": root,
+                "root": url_root,
                 "level": level,
                 "files": files,
                 "dirs": []
@@ -33,6 +37,17 @@ class NavigationCreator:
                     dir_files = self._walk(dir_path)
                     contents["dirs"].append(dir_files)
             return contents
+
+    def _parse_url_root(self, root):
+        relative_root = self._parse_relative_root(root)
+        url_root = self.base_url + '/' + relative_root
+        return url_root.rstrip('/')
+
+    def _parse_relative_root(self, root):
+        if root.startswith(self.path):
+            trim_to = len(self.path)
+            root = root[trim_to:]
+        return root.lstrip('/')
 
     def _parse_level(self, root):
         relative = self._get_relative_root(root)

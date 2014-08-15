@@ -3,12 +3,12 @@ Simple Docs
 
 #### Simple documentation for IT teams
 
-Version 1.2.4
+Version 1.2.5
 
 For more information and latest updates visit
 [simpledocs.co](http://simpledocs.co).
 
-![Simple Docs Screenshot](design/screenshot.png)
+![Simple Docs Screenshot](app/static/images/screenshot.png)
 
 
 About
@@ -42,21 +42,17 @@ the only server requirements are a HTTP server with WSGI support.
 
 A complete deployment example for CentOS with Apache and Mod_WSGI:
 
-```sh
-git clone https://github.com/chrislaskey/simpledocs /var/www/simpledocs
-cd /var/www/simpledocs
-vim app/config.py
-./setup.sh
-```
+    git clone https://github.com/chrislaskey/simpledocs /var/www/simpledocs
+    cd /var/www/simpledocs
+    vim app/config.py
+    ./setup.sh
 
 Then configure the HTTP server:
 
-```sh
-vim example-apache.conf
-mv example-apache.conf /etc/httpd/conf.d/simpledocs.conf
-htpasswd -c /var/www/simpledocs/htpasswd <username>
-service httpd restart
-```
+    vim example-apache.conf
+    mv example-apache.conf /etc/httpd/conf.d/simpledocs.conf
+    htpasswd -c /var/www/simpledocs/htpasswd <username>
+    service httpd restart
 
 Simple Docs will now be running at `http://servername/docs`.
 

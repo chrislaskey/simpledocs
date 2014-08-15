@@ -1,5 +1,8 @@
 ---
 
-apache_servername: compnet-docs.bu.edu
+# Ansible variables used in conjunction with GitHub repository
+# chrislaskey/ansible-deploy
+
+apache_servername: docs.example.com
 apache_virtualhost: virtualhost-python
 apache_base_uri: /docs

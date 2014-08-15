@@ -1,4 +1,4 @@
-from flask import render_template, request, g
+from flask import render_template, request
 from .. import app
 from .. import nav
 from .. import templatevars

@@ -1,4 +1,4 @@
-from flask import request, redirect, url_for, render_template, g
+from flask import request, redirect, url_for, render_template
 from .. import app
 from .. import nav
 from .. import search

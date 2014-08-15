@@ -30,6 +30,7 @@ class TemplateVariableParser:
         segments = self.templatevars.get('uri_segments')[:]
         self._set_page_title(segments)
         self._set_body_class(segments)
+        self._set_url_vars()
         self._set_header_vars()
 
     def _set_page_title(self, segments):
@@ -39,6 +40,10 @@ class TemplateVariableParser:
     def _set_body_class(self, segments):
         body_class = BodyClass().get(segments)
         self.set('body_class', body_class)
+
+    def _set_url_vars(self):
+        base_url = '/' + app.config["BASE_URL"].strip('/')
+        self.set('base_url', base_url)
 
     def _set_header_vars(self):
         self.set('header_title', app.config["HEADER_TITLE"])

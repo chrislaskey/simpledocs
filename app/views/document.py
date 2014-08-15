@@ -1,4 +1,4 @@
-from flask import render_template, request, g
+from flask import render_template, request
 from .. import app
 from .. import nav
 from .. import templatevars
@@ -14,14 +14,3 @@ def page(path):
         nav_items = nav.items(app),
         page = templatevars.parse(request)
     )
-
-# {{ page.body_class }}
-# {{ page.page_title }}
-
-# page = templatevars.parse(request)
-
-# requests.py
-
-# templatevars/__init__.py => parse()
-# templatevars/bodyclass.py => BodyClass()
-# templatevars/pagetitle.py => PageTitle()
