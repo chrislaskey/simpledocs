@@ -1,7 +1,8 @@
 import glob, os, sys
 
 
-project_dir = os.path.dirname(__file__)
+absolute_path = os.path.abspath(__file__)
+project_dir = os.path.dirname(absolute_path)
 project_name = os.path.basename(project_dir)
 virtualenv = '/usr/lib/virtualenvs/{0}'.format(project_name)
 site_packages = glob.glob('{0}/lib/*/site-packages'.format(virtualenv))[0]
