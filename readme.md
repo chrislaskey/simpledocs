@@ -3,7 +3,7 @@ Simple Docs
 
 #### Simple documentation for IT teams
 
-Version 1.2.7
+Version 1.2.8
 
 For more information and latest updates visit
 [simpledocs.co](http://simpledocs.co).
