@@ -13,8 +13,9 @@ def parse(search_string):
 
 def verify(words):
     filter = app.config["SEARCH_TERM_CHARACTER_FILTER"]
-    filtered = [ re.sub(filter, '', x) for x in words if x]
-    terms = filtered[:limit]
+    filtered = [ re.sub(filter, '', x) for x in words if x ]
+    verified_terms = [ x for x in filtered if x ]
+    terms = verified_terms[:limit]
     return terms
 
 

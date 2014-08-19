@@ -1,9 +1,11 @@
 # -*- coding: utf8 -*-
 
-from nose.tools import *
-from lib.requestparser import RequestParser
 
-class TestRequestParser:
+from nose.tools import *
+from app.uri import parse
+
+
+class TestUriParser:
 
     def setup(self):
         "Set up test fixtures"
@@ -15,13 +17,13 @@ class TestRequestParser:
         url = ''
 
         request = RequestStub().create(url)
-        assert_raises(Exception, RequestParser.parse, request)
+        assert_raises(Exception, parse, request)
 
     def test_invalid_url_raises_exception(self):
         url = 'www.example.com/test/uri.html?one=two'
 
         request = RequestStub().create(url)
-        assert_raises(Exception, RequestParser.parse, request)
+        assert_raises(Exception, parse, request)
 
     def test_valid_url(self):
         url = 'http://www.example.com/test/uri.html?one=two'
@@ -33,7 +35,7 @@ class TestRequestParser:
         }
 
         request = RequestStub().create(url)
-        result = RequestParser().parse(request)
+        result = parse(request)
         assert_equal(result, expected)
 
 class RequestStub:
