@@ -3,6 +3,8 @@ Simple Docs
 
 #### Simple documentation for IT teams
 
+[![Build Status](https://travis-ci.org/chrislaskey/simpledocs.svg?branch=github)](https://travis-ci.org/chrislaskey/simpledocs)
+
 Version 1.2.8
 
 For more information and latest updates visit
