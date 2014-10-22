@@ -55,7 +55,7 @@ class _CommandLineSearch:
 
     def _compile_command_results(self, results, weight=1):
         files = results.split('\n')
-        filtered = [x for x in files if x]
+        filtered = [x for x in files if x and os.path.isfile(x)]
         for file in filtered:
             file = os.path.normpath(file)
             # Using a defaultdict datatype to skip key/val instantiation

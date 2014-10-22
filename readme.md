@@ -5,7 +5,7 @@ Simple Docs
 
 [![Build Status](https://travis-ci.org/chrislaskey/simpledocs.svg?branch=github)](https://travis-ci.org/chrislaskey/simpledocs)
 
-Version 1.2.9
+Version 1.2.10
 
 For more information and latest updates visit
 [simpledocs.co](http://simpledocs.co).
