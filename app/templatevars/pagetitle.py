@@ -17,12 +17,15 @@ class PageTitle:
     def _process_page_title_segments(self, uri_segments):
         sections = []
         for piece in uri_segments:
-            if piece in ('be', 'en'):
-                continue
-            title = self._create_title_from_slug(piece)
+            stripped = self._strip_numeric_prefix(piece)
+            title = self._create_title_from_slug(stripped)
             sections.append(title)
         sections.reverse()
         return sections
+
+    def _strip_numeric_prefix(self, text):
+        stripped = re.sub(r'^[0-9_-]*(.*)', r'\1', text)
+        return stripped
 
     def _create_title_from_slug(self, text):
         replaced_text = re.sub(r'[-_]+', ' ', text)
