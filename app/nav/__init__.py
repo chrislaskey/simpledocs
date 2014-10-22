@@ -5,7 +5,9 @@ import re
 def items(app):
     base_url = '/' + app.config["BASE_URL"].strip('/')
     dir = app.config["DOCUMENTS_DIR"]
-    return NavigationCreator(base_url).create(dir)
+    creator = NavigationCreator(base_url)
+    creator.add_file_filter(ImageFiletypeFilter())
+    return creator.create(dir)
 
 
 class NavigationCreator:
@@ -13,6 +15,10 @@ class NavigationCreator:
     def __init__(self, base_url = '/'):
         self.base_url = base_url
         self.nav = []
+        self.file_filters = []
+
+    def add_file_filter(self, filter):
+        self.file_filters.append(filter)
 
     def create(self, path):
         self.path = path
@@ -72,8 +78,14 @@ class NavigationCreator:
         return stripped_text.title()
 
     def _parse_filenames(self, files):
-        name = self._parse_filename
-        files = [{"name":name(x), "path":x } for x in files]
+        filtered = self._file_type_filters(files)
+        filename = self._parse_filename
+        files = [{"name":filename(x), "path":x } for x in filtered]
+        return files
+
+    def _file_type_filters(self, files):
+        for filter in self.file_filters:
+            files = filter.process(files)
         return files
 
     def _parse_filename(self, filename):
@@ -88,3 +100,23 @@ class NavigationCreator:
         else:
             without_extension = filename
         return without_extension
+
+
+class ImageFiletypeFilter:
+
+    disallowed = ['png', 'jpg', 'jpeg', 'gif']
+
+    def process(self, files):
+        filtered = []
+        for filename in files:
+            extension = self._get_extension(filename)
+            if extension not in self.disallowed:
+                filtered.append(filename)
+        return filtered
+
+    def _get_extension(self, filename):
+        period_location = filename.find('.')
+        if period_location == -1:
+            return ''
+        extension = filename[(period_location + 1):]
+        return extension.lower()
