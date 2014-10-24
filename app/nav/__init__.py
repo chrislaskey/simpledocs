@@ -78,6 +78,7 @@ class NavigationCreator:
         return stripped_text.title()
 
     def _parse_filenames(self, files):
+        files.sort()
         filtered = self._file_type_filters(files)
         filename = self._parse_filename
         files = [{"name":filename(x), "path":x } for x in filtered]
